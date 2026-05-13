@@ -76,6 +76,7 @@ export const useStyles = createUseStyles({
             transform: 'translateY(0)',    // Встает на свое место
         }
     },
+    // 3 уровень
     dropdown: {
         position: "absolute",
         fontFamily: '"Manrope", sans-serif',
@@ -83,7 +84,6 @@ export const useStyles = createUseStyles({
         width: "100%",
         height: "300px",
         animation: '$slideDown 0.5s ease-out',        //применяем анимацию
-        backgroundColor: "white",
         zIndex: 1000,
     },
     dropdownContent: {
@@ -92,6 +92,8 @@ export const useStyles = createUseStyles({
         marginTop: 35,
         maxWidth: 1580,
         margin: "0px auto",
+        height: "100%",
+        backgroundColor: "white",
     },
     column: {
         display: "flex",
@@ -105,13 +107,10 @@ export const useStyles = createUseStyles({
         border: "none",
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
     },
-    // overlay: {
-    //     position: 'relative',
-    //     top: 0,
-    //     left: 0,
-    //     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    //     width: "100vw",
-    //     height: "100vh"
-    // }
+    overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        width: "100%",
+        height: "100vh",
+    }
 })
 

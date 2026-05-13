@@ -52,6 +52,9 @@ export default function TabMenu({ navItems, menuData }) {
                             <img src={close} alt="Закрыть" />
                         </button>
                     </div>
+                    <div className={classes.overlay}>
+
+                    </div>
                 </div>
             )}
         </>
