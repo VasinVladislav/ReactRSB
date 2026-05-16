@@ -1,7 +1,10 @@
 import { useStyles } from "./style"
 import { useState } from "react"
 import { PERSONAL_DATA, YOUTH_DATA, FAMILY_DATA, ENTERTAINMENT_DATA, PREMIUM_DATA } from "./grid/Data.jsx"
-import up from "./grid/icons/up.png"
+import up from "./assets/up.png"
+import face1 from "./assets/face1.png"
+import face2 from "./assets/face2.png"
+import face3 from "./assets/face3.png"
 
 export default function CatalogSection() {
     const classes = useStyles();
@@ -58,24 +61,27 @@ export default function CatalogSection() {
                         <h3>Не знаете какой продукт Вам подойдет?</h3>
                         <div className={classes.quizTextBot}>
                             <p>Пройдите интерактивный квиз и узнайте, чего Вы хотите на самом деле </p>
-                        <img src={up} alt="" />
+                            <img src={up} alt="" />
                         </div>
-                        
                     </div>
-
-
                     <div className={classes.quizFooter}>
                         <div className={classes.avatarStack}>
                             {/* Тот самый стек кругов, который мы делали */}
-                            <div className={classes.circle}>+158</div>
+                            <img src={face1} className={classes.circle} alt="" />
+                            <img src={face2} className={classes.circle} alt="" />
+                            <img src={face3} className={classes.circle} alt="" />
                         </div>
-                        <button className={classes.quizBtn}>Проходят квиз прямо сейчас</button>
+                        <button className={classes.quizBtn}>
+                            <div className={classes.quizCounter}>
+                                158+
+                            </div>
+                            <div className={classes.quizText}>
+                                Проходят квиз прямо сейчас
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
-
-
-
         </section>
     )
 }
