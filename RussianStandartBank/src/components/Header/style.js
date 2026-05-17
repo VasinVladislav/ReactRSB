@@ -4,9 +4,9 @@ export const useStyles = createUseStyles({
     header: {
         fontFamily: '"Manrope", sans-serif',
         fontSize: 14,
+        backgroundColor: "white",
         position: "relative",
         zIndex: 1000,
-        backgroundColor: "white"
     },
     topHeader: {
         display: "flex",

@@ -174,6 +174,5 @@ export const useStyles = createUseStyles({
     fontFamily: "Inter Regular",
     width: 90
   },
-
 })
 

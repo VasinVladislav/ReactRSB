@@ -66,7 +66,6 @@ export default function CatalogSection() {
                     </div>
                     <div className={classes.quizFooter}>
                         <div className={classes.avatarStack}>
-                            {/* Тот самый стек кругов, который мы делали */}
                             <img src={face1} className={classes.circle} alt="" />
                             <img src={face2} className={classes.circle} alt="" />
                             <img src={face3} className={classes.circle} alt="" />

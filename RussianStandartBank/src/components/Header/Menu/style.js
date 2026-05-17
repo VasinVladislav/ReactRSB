@@ -8,7 +8,7 @@ export const useStyles = createUseStyles({
         alignItems: "center",
         width: "100vw",
         maxWidth: 1580,
-        margin: "0 auto 10px"
+        margin: "0 auto"
     },
     botNav: {
         display: "flex",
@@ -84,7 +84,8 @@ export const useStyles = createUseStyles({
         width: "100%",
         height: "300px",
         animation: '$slideDown 0.5s ease-out',        //применяем анимацию
-        zIndex: 1000,
+        backgroundColor: "white",
+        zIndex: 200,
     },
     dropdownContent: {
         display: "flex",
@@ -93,7 +94,6 @@ export const useStyles = createUseStyles({
         maxWidth: 1580,
         margin: "0px auto",
         height: "100%",
-        backgroundColor: "white",
     },
     column: {
         display: "flex",
@@ -107,10 +107,19 @@ export const useStyles = createUseStyles({
         border: "none",
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
     },
+    '@keyframes fadeIn': {
+        from: { opacity: 0 },
+        to: { opacity: 1 }
+    },
     overlay: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        width: "100%",
-        height: "100vh",
+        position: 'fixed', // Фиксируем относительно экрана
+        top: 0,            // Растягиваем от верхнего края
+        left: 0,           // ...от левого
+        right: 0,          // ...до правого
+        bottom: 0,         // ...до самого низа
+        zIndex: 10,        // Опускаем ПОД контент меню (dropdownContent)
+        animation: "$fadeIn 1s ease-out"
     }
 })
 

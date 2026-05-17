@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useStyles } from "./style";
+import { createPortal } from "react-dom";
 import close from "../icons/close.png";
 import enter from "../icons/enter.png";
 import search from "../icons/search.png";
@@ -17,6 +18,7 @@ export default function TabMenu({ navItems, menuData }) {
 
     return (
         <>
+            {/* Второй уровень */}
             <div className={classes.botHeader}>
                 <nav className={classes.botNav}>
                     {navItems.map((item) => (
@@ -37,6 +39,12 @@ export default function TabMenu({ navItems, menuData }) {
                     <button className={classes.loginBtn}><img src={enter} alt="Вход" /> Интернет-банк</button>
                 </div>
             </div>
+            {/* Рендерим оверлей ВНЕ хедера через Портал */}
+            {activeMenu && createPortal(
+                <div className={classes.overlay} onClick={() => setActiveMenu(null)} />,
+                document.body // Телепортируем его прямо в body страницы
+            )}
+            {/* Третий уровень */}
             {activeMenu && (
                 <div className={classes.dropdown}>
                     <div className={classes.dropdownContent}>
@@ -51,9 +59,6 @@ export default function TabMenu({ navItems, menuData }) {
                         <button className={classes.closeBtn} onClick={() => setActiveMenu(null)}>
                             <img src={close} alt="Закрыть" />
                         </button>
-                    </div>
-                    <div className={classes.overlay}>
-
                     </div>
                 </div>
             )}
