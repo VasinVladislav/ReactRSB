@@ -25,7 +25,7 @@ export default function TabMenu({ navItems, menuData }) {
                         <button
                             key={item.id}
                             onClick={() => toggleMenu(item.id)}
-                            className={classes.navButton}
+                            className={`${classes.navButton} ${activeMenu === item.id ? classes.active : ""}`}
                         >
                             <img src={item.icon} className={classes.icon} alt="" />
                             {item.text}

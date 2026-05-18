@@ -14,12 +14,13 @@ export const useStyles = createUseStyles({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        gap: 40
+        gap: 20
     },
     navButton: {
         background: 'none',      // Убираем фон
         border: 'none',          // Убираем рамку
-        padding: 0,              // Убираем внутренние отступы
+        padding: '0px',
+        borderRadius: 20,
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
         color: '#000',         // Цвет текста (можно поменять)
         outline: 'none',         // Убираем синюю обводку при клике
@@ -30,6 +31,11 @@ export const useStyles = createUseStyles({
         '&:hover': {
             color: '#828282',      // Цвет при наведении (например, красный)
         }
+    },
+    active: {
+        border: "none",
+        outline: "2px solid black",
+        outlineOffset: "8px" /* Зазор 8px между кнопкой и рамкой */
     },
     icon: {
         width: 22,
@@ -107,9 +113,15 @@ export const useStyles = createUseStyles({
         border: "none",
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
     },
-    '@keyframes fadeIn': {
-        from: { opacity: 0 },
-        to: { opacity: 1 }
+    '@keyframes fadeInWithBlur': {
+        from: {
+            opacity: 0,
+            backdropFilter: 'blur(0px)' // Начинаем без размытия
+        },
+        to: {
+            opacity: 1,
+            backdropFilter: 'blur(4px)' // Плавно размываем до 4px
+        }
     },
     overlay: {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -119,7 +131,10 @@ export const useStyles = createUseStyles({
         right: 0,          // ...до правого
         bottom: 0,         // ...до самого низа
         zIndex: 10,        // Опускаем ПОД контент меню (dropdownContent)
-        animation: "$fadeIn 1s ease-out"
+        // Поддержка для Safari (обязательно через префикс)
+        '-webkit-backdrop-filter': 'blur(4px)',
+        backdropFilter: 'blur(4px)',
+        animation: '$fadeInWithBlur 0.4s ease-out',
     }
 })
 

@@ -28,12 +28,13 @@ export const useStyles = createUseStyles({
     },
     topNav: {
         display: "flex",
-        gap: 40,
+        gap: 20,
     },
     navButton: {
         background: 'none',      // Убираем фон
-        border: '2px solid #ffffff00',          // Убираем рамку
-        padding: 10,
+        border: 'none',          // Убираем рамку
+        padding: '0px',
+        borderRadius: 20,
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
         color: '#000',         // Цвет текста (можно поменять)
         outline: 'none',         // Убираем синюю обводку при клике
@@ -46,9 +47,9 @@ export const useStyles = createUseStyles({
         }
     },
     active: {
-        border: "2px solid black",
-        borderRadius: 20,
-        padding: 10
+        border: "none",
+        outline: "2px solid black",
+        outlineOffset: "10px" /* Зазор 8px между кнопкой и рамкой */
     },
     line: {
         position: "absolute",
