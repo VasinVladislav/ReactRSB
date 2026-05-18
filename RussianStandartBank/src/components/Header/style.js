@@ -32,8 +32,8 @@ export const useStyles = createUseStyles({
     },
     navButton: {
         background: 'none',      // Убираем фон
-        border: 'none',          // Убираем рамку
-        padding: 0,              // Убираем внутренние отступы
+        border: '2px solid #ffffff00',          // Убираем рамку
+        padding: 10,
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
         color: '#000',         // Цвет текста (можно поменять)
         outline: 'none',         // Убираем синюю обводку при клике
@@ -44,6 +44,11 @@ export const useStyles = createUseStyles({
         '&:hover': {
             color: '#828282',      // Цвет при наведении (например, красный)
         }
+    },
+    active: {
+        border: "2px solid black",
+        borderRadius: 20,
+        padding: 10
     },
     line: {
         position: "absolute",

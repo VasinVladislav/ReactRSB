@@ -19,6 +19,8 @@ export const useStyles = createUseStyles({
     margin: "50px 0",
   },
   tab: {
+    position: 'relative', // Нужно для позиционирования линии/фона
+    overflow: 'hidden',   // Чтобы прогресс не вылезал за границы
     background: "none",
     border: "none",
     borderRadius: 20,
@@ -28,8 +30,35 @@ export const useStyles = createUseStyles({
     transition: 'background-color 0.5s ease',
   },
   active: {
-    backgroundColor: '#E1CBFE', // Черный фон для активной вкладки
+    backgroundColor: 'rgba(225, 203, 254, 0.3)', // Черный фон для активной вкладки
     borderRadius: 20,
+    '&::before': {
+      borderRadius: 20,
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      width: '100%',
+      backgroundColor: '#E1CBFE', // Основной цвет заливки
+      zIndex: -1,
+      transformOrigin: 'left',
+      animation: '$progress 5s linear forwards', // Анимация на 5 секунд
+    },
+  },
+  paused: {
+    '&::before': {
+      animation: 'none !important', // Останавливаем прогресс, если юзер кликнул
+      transform: 'scaleX(1)',       // Оставляем вкладку полностью закрашенной
+    }
+  },
+  '@keyframes progress': {
+    '0%': {
+      transform: 'scaleX(0)',
+    },
+    '100%': {
+      transform: 'scaleX(1)',
+    }
   },
   main: {
     display: "flex",
@@ -40,7 +69,19 @@ export const useStyles = createUseStyles({
     gridTemplateColumns: "1fr 1fr",
     gridTemplateRows: "200px 200px",
     gap: 40,
-    width: "66%"
+    width: "66%",
+    // Применяем анимацию ко всему гриду
+    animation: '$fadeIn 0.5s ease-in-out',
+  },
+  '@keyframes fadeIn': {
+    from: {
+      opacity: 0,
+      transform: 'translateY(10px)', // Легкий эффект вылета снизу
+    },
+    to: {
+      opacity: 1,
+      transform: 'translateY(0)',
+    }
   },
   card: {
     display: "flex",
