@@ -68,13 +68,15 @@ export default function CatalogSection() {
                 <div className={classes.grid}>
                     {dataMap[activeTab].map((item) => (
                         <div key={item.id} className={classes.card}>
-                            <div className={classes.cardHeader}>
-                                <img src={item.icon} />
-                                <h3>{item.title}</h3>
-                            </div>
-                            <div className={classes.cardContent}>
-                                {item.content}
-                            </div>
+                            <a href={item.href} className={classes.cardHref}>
+                                <div className={classes.cardHeader}>
+                                    <img src={item.icon} />
+                                    <h3>{item.title}</h3>
+                                </div>
+                                <div className={classes.cardContent}>
+                                    {item.content}
+                                </div>
+                            </a>
                         </div>
                     ))}
                 </div>

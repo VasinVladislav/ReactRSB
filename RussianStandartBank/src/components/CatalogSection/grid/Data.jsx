@@ -24,6 +24,7 @@ export const PERSONAL_DATA = [
         id: 'personal_credit',
         title: 'Кредитная карта',
         icon: creditIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -42,6 +43,7 @@ export const PERSONAL_DATA = [
         id: 'personal_debit',
         title: 'Дебетовая карта',
         icon: cardIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -64,6 +66,7 @@ export const PERSONAL_DATA = [
         id: 'personal_loan',
         title: 'Кредит на любые цели',
         icon: percentIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -83,6 +86,7 @@ export const PERSONAL_DATA = [
         id: 'personal_invest',
         title: 'Инвестиции',
         icon: investmentsIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -104,6 +108,7 @@ export const YOUTH_DATA = [
         id: 'youth_card',
         title: 'Молодежная карта',
         icon: youthIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -122,6 +127,7 @@ export const YOUTH_DATA = [
         id: 'youth_sub',
         title: 'Подписка со скидкой',
         icon: subscriptionIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -143,6 +149,7 @@ export const YOUTH_DATA = [
         id: 'youth_travel',
         title: 'Путешествия',
         icon: travelIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -165,6 +172,7 @@ export const YOUTH_DATA = [
         id: 'youth_education',
         title: 'Кредит на образование',
         icon: educationIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -186,6 +194,7 @@ export const FAMILY_DATA = [
         id: 'family_kids',
         title: 'Детская карта',
         icon: childIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -205,6 +214,7 @@ export const FAMILY_DATA = [
         id: 'family_deposit',
         title: 'Семейный счет',
         icon: familyIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -225,6 +235,7 @@ export const FAMILY_DATA = [
         id: 'family_mortgage',
         title: 'Семейная ипотека',
         icon: houseIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -245,6 +256,7 @@ export const FAMILY_DATA = [
         id: 'family_cashback',
         title: 'Супермаркеты',
         icon: marketIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -267,6 +279,7 @@ export const ENTERTAINMENT_DATA = [
         id: 'ent_cinema',
         title: 'Кино и театры',
         icon: cinemaIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -286,6 +299,7 @@ export const ENTERTAINMENT_DATA = [
         id: 'ent_games',
         title: 'Гейминг',
         icon: gameIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -306,6 +320,7 @@ export const ENTERTAINMENT_DATA = [
         id: 'ent_restaurants',
         title: 'Рестораны',
         icon: restaurantIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -326,6 +341,7 @@ export const ENTERTAINMENT_DATA = [
         id: 'ent_events',
         title: 'Концерты и фесты',
         icon: festIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="cardColumn">
@@ -347,6 +363,7 @@ export const PREMIUM_DATA = [
         id: 'prem_card',
         title: 'Премиальная металлическая',
         icon: metalIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="cardColumn">
@@ -365,6 +382,7 @@ export const PREMIUM_DATA = [
         id: 'prem_concierge',
         title: 'Консьерж-сервис',
         icon: conciergeIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="cardColumn">
@@ -383,6 +401,7 @@ export const PREMIUM_DATA = [
         id: 'prem_cashback',
         title: 'Премиум Кэшбэк',
         icon: premiumIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="card-number-row">
@@ -402,6 +421,7 @@ export const PREMIUM_DATA = [
         id: 'prem_wealth',
         title: 'Управление капиталом',
         icon: goldIcon,
+        href: '#',
         content: <>
             <div className="cardRow">
                 <div className="cardColumn">

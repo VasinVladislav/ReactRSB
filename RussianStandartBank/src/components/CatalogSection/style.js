@@ -89,7 +89,17 @@ export const useStyles = createUseStyles({
     justifyContent: "space-between",
     padding: 30,
     border: "1px solid black",
-    borderRadius: 20
+    borderRadius: 20,
+    cursor: "pointer",
+  },
+  cardHref: {
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    textDecoration: "none",
+    color: "black"
   },
   cardHeader: {
     display: "flex",
@@ -112,14 +122,14 @@ export const useStyles = createUseStyles({
       flexDirection: "row",
       alignItems: "center",
       gap: 10,
-      maxWidth: "50%",
+      width: "200px",
     },
     '& .cardColumn': {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
-      maxWidth: 185,
+      width: "200px",
       maxHeight: 70
     },
     '& .card-number-row': {
