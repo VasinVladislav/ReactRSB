@@ -1,11 +1,11 @@
 import cardIcon from "./icons/card.png"
 import percentIcon from "./icons/percent.png"
 import investmentsIcon from "./icons/investments.png"
-import youthIcon from "./icons/youth.png" // смайлик или кепка
-import familyIcon from "./icons/family.png" // домик или сердечко
-import gameIcon from "./icons/game.png" // джойстик
-import cinemaIcon from "./icons/cinema.png" // камера или попкорн
-import premiumIcon from "./icons/premium.png" // корона или алмаз
+import youthIcon from "./icons/youth.png"
+import familyIcon from "./icons/family.png"
+import gameIcon from "./icons/game.png"
+import cinemaIcon from "./icons/cinema.png"
+import premiumIcon from "./icons/premium.png"
 import subscriptionIcon from "./icons/sub.png"
 import travelIcon from "./icons/palm.png"
 import educationIcon from "./icons/diploma.png"
