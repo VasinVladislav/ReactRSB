@@ -9,16 +9,17 @@ export default function MapBlock() {
 
     // Фильтруем точки: показываем только те, что соответствуют выбранной вкладке
     const filteredPoints = points.filter(point => point.type === activeTab);
+    
 
     return (
-        <div className={classes.mapSection}>
+        <div id='map' className={classes.mapSection}>
             {/* 1. Слой с фильтрами */}
             <div className={classes.overlay}>
                 <div className={classes.overlayMenu}>
                     {/* Левая часть */}
                     <div className={classes.leftSection}>
                         <h2 className={classes.title}>Офисы и банкоматы</h2>
-                        <input className={classes.input} placeholder="Ваш адрес" />
+                        <input id="suggest" className={classes.input} placeholder="Ваш адрес" />
                     </div>
 
                     {/* Правая часть с чекбоксами */}

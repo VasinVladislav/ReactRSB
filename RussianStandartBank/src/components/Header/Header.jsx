@@ -2,6 +2,7 @@ import { useStyles } from "./style"
 import { useState } from "react"
 import logo from "../../assets/logo.png"
 import { Individuals, Business, PrivateBanking } from "./Menu/Data.jsx"
+import { scrollToId } from "../../utils/scroll.js"
 
 export default function Header() {
   const classes = useStyles();
@@ -29,7 +30,7 @@ export default function Header() {
           </div>
           <div className={classes.topNav}>
             <button className={classes.navButton}>О банке</button>
-            <button className={classes.navButton}>Офисы и банкоматы</button>
+            <button className={classes.navButton} onClick={() => scrollToId('map')}>Офисы и банкоматы</button>
             <button className={classes.navButton}>Москва</button>
             <button className={classes.navButton}>RU</button>
           </div>

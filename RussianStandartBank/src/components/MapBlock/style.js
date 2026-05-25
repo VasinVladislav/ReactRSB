@@ -8,11 +8,11 @@ export const useStyles = createUseStyles({
         borderRadius: '20px',
         overflow: 'hidden',
         border: "1px solid black",
-        // fontFamily: 'Arial, sans-serif',
         margin: "0 auto 100px",
-
+        scrollMarginTop: "80px" 
     },
     map: {
+        height: "100%",
         '& [class*="ground-pane"]': {
             filter: 'grayscale(1) sepia(10%) hue-rotate(180deg) brightness(0.9)',
         }
@@ -59,7 +59,6 @@ export const useStyles = createUseStyles({
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)', // Две колонки фильтров
         gap: '22px 80px',
-        // paddingTop: '35px', // Чтобы выровнять с инпутом
     },
     checkboxItem: {
         display: 'flex',

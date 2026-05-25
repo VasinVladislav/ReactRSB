@@ -2,6 +2,7 @@ import Header from './components/Header/Header.jsx'
 import PromoBlock from './components/PromoBlock/PromoBlock.jsx'
 import CatalogSection from './components/CatalogSection/CatalogSection.jsx'
 import MapBlock from './components/MapBlock/MapBlock.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 export default function App() {
 
@@ -11,6 +12,7 @@ export default function App() {
       <PromoBlock />
       <CatalogSection />
       <MapBlock />
+      <Footer />
     </div>
   )
 }
