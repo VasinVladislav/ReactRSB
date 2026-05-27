@@ -4,23 +4,29 @@ export const useAddressSuggestions = (ymaps, query) => {
     const [suggestions, setSuggestions] = useState([]);
 
     useEffect(() => {
-        // Начинаем поиск только если введено больше 2 символов
+        // Если API не готово или текста мало — просто выходим, ничего не очищая внутри эффекта
         if (!ymaps || !ymaps.suggest || !query || query.length < 3) {
-            setSuggestions([]);
             return;
         }
 
+        let isMounted = true;
+
         const fetchSuggestions = async () => {
             try {
-                // Используем встроенный метод API
                 const items = await ymaps.suggest(query);
-                setSuggestions(items);
+                if (isMounted) {
+                    setSuggestions(items);
+                }
             } catch (e) {
                 console.error("Ошибка при получении подсказок:", e);
             }
         };
 
         fetchSuggestions();
+
+        return () => {
+            isMounted = false;
+        };
     }, [query, ymaps]);
 
     return { suggestions, setSuggestions };
