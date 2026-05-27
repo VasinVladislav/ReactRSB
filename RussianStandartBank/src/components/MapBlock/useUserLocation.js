@@ -8,7 +8,7 @@ export const useUserLocation = (mapRef, ymaps) => {
             (position) => {
                 const { latitude, longitude } = position.coords;
                 
-                mapRef.current.setCenter([latitude, longitude], 13, {
+                mapRef.current.setCenter([latitude, longitude], 10, {
                     duration: 1000,
                     timingFunction: 'ease-in-out'
                 });
