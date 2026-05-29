@@ -1,15 +1,22 @@
 import { useRef, useEffect } from 'react';
+import { useMapGeolocation } from './useMapGeolocation';
 
 // Выпадающее меню подсказок для быстрого набора адресов
 
 export function useMapSuggest() {
     const mapRef = useRef(null);
     const suggestRef = useRef(null); // Храним инстанс саджеста для его очистки
+    const { userCoords, fetchUserLocation } = useMapGeolocation(); // Подключаем логику геолокации
 
     const handleMapLoad = (ymapsInstance) => {
+
+        // 1. Запускаем поиск пользователя через изолированную логику
+        fetchUserLocation(ymapsInstance, mapRef);
+
+        // 2. Инициализируем логику подсказок
         ymapsInstance.modules.require(['SuggestView'], (SuggestView) => {
-            // Инициализируем и сохраняем в ref
-            suggestRef.current = new SuggestView('suggest');
+
+            suggestRef.current = new SuggestView('suggest'); // Инициализируем и сохраняем в ref
 
             // Подписываемся на событие выбора адреса
             suggestRef.current.events.add('select', (e) => {
@@ -34,5 +41,5 @@ export function useMapSuggest() {
         };
     }, []);
 
-    return { mapRef, handleMapLoad };
+    return { mapRef, handleMapLoad, userCoords };
 }

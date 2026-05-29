@@ -6,8 +6,8 @@ export default function MapBlockContent({ classes, activeTab }) {
 
     // Фильтруем точки: показываем только те, что соответствуют выбранной вкладке
     const filteredPoints = points.filter(point => point.type === activeTab);
-    // Функция инициализации подсказок после загрузки карты
-    const { mapRef, handleMapLoad } = useMapSuggest();
+    // Функция инициализации подсказок и геолокации после загрузки карты
+    const { mapRef, handleMapLoad, userCoords } = useMapSuggest();
 
     return (
         <>
@@ -15,7 +15,7 @@ export default function MapBlockContent({ classes, activeTab }) {
             <YMaps query={{
                 apikey: '894225a5-b09a-4d9a-93ad-997f3702d947',
                 suggest_apikey: '5cf44534-3f1f-4c9c-919c-8e139ad2c078',
-                load: 'suggest,geocode'
+                load: 'suggest,geocode,geolocation'
             }}>
                 <Map
                     className={classes.map}
@@ -40,6 +40,21 @@ export default function MapBlockContent({ classes, activeTab }) {
                             }}
                         />
                     ))}
+                    {/* Маркер пользователя (рендерится только если координаты найдены) */}
+                    {userCoords && (
+                        <Placemark
+                            geometry={userCoords}
+                            properties={{
+                                hintContent: 'Вы здесь',
+                                balloonContent: 'Ваше текущее местоположение'
+                            }}
+                            options={{
+                                // Зеленая метка с иконкой дома/человека для отличия
+                                preset: 'islands#greenCircleDotIconWithCaption',
+                                iconColor: '#28a745'
+                            }}
+                        />
+                    )}
                 </Map>
             </YMaps>
         </>
