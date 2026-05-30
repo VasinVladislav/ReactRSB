@@ -72,48 +72,6 @@ export const useStyles = createUseStyles({
         cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
     },
 
-    // Описываем анимацию 
-    '@keyframes slideDown': {
-        from: {
-            opacity: 0,
-            transform: 'translateY(-10px)', // Немного смещено вверх
-        },
-        to: {
-            opacity: 1,
-            transform: 'translateY(0)',    // Встает на свое место
-        }
-    },
-    // 3 уровень
-    dropdown: {
-        position: "absolute",
-        fontFamily: '"Manrope", sans-serif',
-        fontSize: 14,
-        width: "100%",
-        height: "300px",
-        animation: '$slideDown 0.5s ease-out',        //применяем анимацию
-        backgroundColor: "white",
-        zIndex: 200,
-    },
-    dropdownContent: {
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: 35,
-        maxWidth: 1580,
-        margin: "0px auto",
-        height: "100%",
-    },
-    column: {
-        display: "flex",
-        flexDirection: "column",
-        gap: 12,
-    },
-    closeBtn: {
-        width: 42,
-        height: 42,
-        background: "none",
-        border: "none",
-        cursor: 'pointer',       // Делаем курсор "ручкой" при наведении
-    },
     '@keyframes fadeInWithBlur': {
         from: {
             opacity: 0,

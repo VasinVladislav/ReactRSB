@@ -1,17 +1,15 @@
 import { useStyles } from "./style"
 import { useState } from "react"
 import logo from "../../assets/logo.png"
-import { Individuals, Business, PrivateBanking } from "./Menu/Data.jsx"
 import { scrollToId } from "../../utils/scroll.js"
+import LevelOne from "./LevelOne/Menu.jsx"
+import LevelTwo from "./LevelTwo/Menu.jsx"
+import LevelThree from "./LevelThree/Menu.jsx"
 
 export default function Header() {
   const classes = useStyles();
-
   const [activeTab, setActiveTab] = useState('individuals');
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-  };
+  const [activeMenu, setActiveMenu] = useState(null);
 
   return (
     <>
@@ -22,11 +20,12 @@ export default function Header() {
             <div className={classes.logoImg}>
               <img src={logo} alt="Русский Стандарт Банк" />
             </div>
-            <nav className={classes.topNav}>
-              <button className={`${classes.navButton} ${activeTab === 'individuals' ? classes.active : ''}`} onClick={() => handleTabChange('individuals')}>Частным клиентам</button>
-              <button className={`${classes.navButton} ${activeTab === 'business' ? classes.active : ''}`} onClick={() => handleTabChange('business')}>Для бизнеса</button>
-              <button className={`${classes.navButton} ${activeTab === 'private' ? classes.active : ''}`} onClick={() => handleTabChange('private')}>Private Banking</button>
-            </nav>
+            <LevelOne
+              classes={classes}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              setActiveMenu={setActiveMenu}
+              />
           </div>
           <div className={classes.topNav}>
             <button className={classes.navButton}>О банке</button>
@@ -36,11 +35,19 @@ export default function Header() {
           </div>
         </div>
         {/* Основная навигация */}
-        {/* Условный рендер для выбранной вкладки */}
-        <hr className={classes.line}/>
-          {activeTab === 'individuals' && <Individuals />}
-          {activeTab === 'business' && <Business />}
-          {activeTab === 'private' && <PrivateBanking />}
+
+        <hr className={classes.line} />
+        <LevelTwo
+          activeTab={activeTab}
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+        />
+        <LevelThree
+          classes={classes}
+          activeTab={activeTab}
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+        />
       </header>
     </>
   )
