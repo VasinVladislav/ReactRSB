@@ -7,8 +7,9 @@ export const useStyles = createUseStyles({
         fontFamily: '"Manrope", sans-serif',
         fontSize: 14,
         margin: "60px auto",
-        maxWidth: 1580,
-        width: "100vw"
+        maxWidth: 1680,
+        width: "100%",
+        padding: "0 50px"
 
     },
     container: {

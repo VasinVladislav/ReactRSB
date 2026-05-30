@@ -3,16 +3,18 @@ import { createUseStyles } from 'react-jss';
 export const useStyles = createUseStyles({
     mapSection: {
         position: 'relative', // Контейнер для позиционирования оверлея
-        width: '1580px',
+        maxWidth: '1680px',
         height: '600px',
-        borderRadius: '20px',
         overflow: 'hidden',
-        border: "1px solid black",
         margin: "0 auto 100px",
+        padding: "0 50px",
         scrollMarginTop: "80px" 
     },
     map: {
         height: "100%",
+        border: "1px solid black",
+        borderRadius: '20px',
+        overflow: 'hidden',
         '& [class*="ground-pane"]': {
             filter: 'grayscale(1) sepia(10%) hue-rotate(180deg) brightness(0.9)',
         }

@@ -2,21 +2,32 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
   section: {
-    maxWidth: 1480,
-
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: 1680,
+    width: "100%",
     margin: "150px auto",
+    padding: "0 50px",
     '& *': {
       fontFamily: '"Manrope", SemiBold',
     }
   },
   mainTitle: {
     fontSize: 54,
+    '@media (max-width: 1580px)': {
+      margin: "0 auto"
+    },
   },
   tabs: {
     display: "flex",
     alignItems: "center",
     gap: 80,
     margin: "50px 0",
+    '@media (max-width: 1580px)': {
+      margin: "50px auto",
+      justifyContent: "space-between",
+      gap: 30
+    },
   },
   tab: {
     position: 'relative', // Нужно для позиционирования линии/фона
@@ -62,7 +73,13 @@ export const useStyles = createUseStyles({
   },
   main: {
     display: "flex",
-    gap: 40
+    gap: 40,
+    width: "100%",
+    '@media (max-width: 1580px)': {
+      flexDirection: "column",
+      maxWidth: "1000px",
+      margin: "0 auto"
+    },
   },
   grid: {
     display: "grid",
@@ -72,6 +89,9 @@ export const useStyles = createUseStyles({
     width: "66%",
     // Применяем анимацию ко всему гриду
     animation: '$fadeIn 0.5s ease-in-out',
+    '@media (max-width: 1580px)': {
+      width: "100%"
+    },
   },
   '@keyframes fadeIn': {
     from: {
@@ -149,6 +169,7 @@ export const useStyles = createUseStyles({
     },
   },
 
+  // Карта квиз
   quizCard: {
     width: "33%",
     display: "flex",
@@ -158,6 +179,10 @@ export const useStyles = createUseStyles({
     backgroundColor: "#000000",
     color: "#FFFFFF",
     borderRadius: 20,
+    '@media (max-width: 1580px)': {
+      width: "100%",
+      flexDirection: "row"
+    },
     '& h3': {
       fontSize: 32,
       maxWidth: 420,

@@ -39,11 +39,13 @@ export default function TabMenu({ navItems, menuData }) {
                     <button className={classes.loginBtn}><img src={enter} alt="Вход" /> Интернет-банк</button>
                 </div>
             </div>
+            
             {/* Рендерим оверлей ВНЕ хедера через Портал */}
             {activeMenu && createPortal(
                 <div className={classes.overlay} onClick={() => setActiveMenu(null)} />,
                 document.body // Телепортируем его прямо в body страницы
             )}
+
             {/* Третий уровень */}
             {activeMenu && (
                 <div className={classes.dropdown}>

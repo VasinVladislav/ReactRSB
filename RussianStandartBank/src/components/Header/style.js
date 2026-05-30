@@ -14,7 +14,8 @@ export const useStyles = createUseStyles({
         alignItems: "center",
         gap: 40,
         margin: "0px auto",
-        maxWidth: 1580,
+        maxWidth: 1680,
+        padding: "0px 50px"
     },
     topLeft: {
         display: "flex",

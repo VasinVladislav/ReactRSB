@@ -7,8 +7,9 @@ export const useStyles = createUseStyles({
         justifyContent: "space-between",
         alignItems: "center",
         width: "100vw",
-        maxWidth: 1580,
-        margin: "0 auto"
+        maxWidth: 1680,
+        margin: "0 auto",
+        padding: "0 50px"
     },
     botNav: {
         display: "flex",
