@@ -10,6 +10,7 @@ export default function Header() {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState('individuals');
   const [activeMenu, setActiveMenu] = useState(null);
+  const [selectedCity, setSelectedCity] = useState('Москва');
 
   return (
     <>
@@ -21,7 +22,6 @@ export default function Header() {
               <img src={logo} alt="Русский Стандарт Банк" />
             </div>
             <LevelOne
-              classes={classes}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
               setActiveMenu={setActiveMenu}
@@ -30,7 +30,7 @@ export default function Header() {
           <div className={classes.topNav}>
             <button className={classes.navButton}>О банке</button>
             <button className={classes.navButton} onClick={() => scrollToId('map')}>Офисы и банкоматы</button>
-            <button className={classes.navButton}>Москва</button>
+            <button className={classes.navButton} onClick={() => setActiveMenu('cities')}>{selectedCity}</button>
             <button className={classes.navButton}>RU</button>
           </div>
         </div>
@@ -47,6 +47,7 @@ export default function Header() {
           activeTab={activeTab}
           activeMenu={activeMenu}
           setActiveMenu={setActiveMenu}
+          setSelectedCity={setSelectedCity}
         />
       </header>
     </>

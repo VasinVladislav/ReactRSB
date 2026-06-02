@@ -1,10 +1,8 @@
 import { createPortal } from "react-dom";
-import enter from "../icons/enter.png";
-import search from "../icons/search.png";
+import enter from "./icons/enter.png";
+import search from "./icons/search.png";
 import { INDIVIDUALS_NAV_ITEMS, BUSINESS_NAV_ITEMS, PRIVATE_NAV_ITEMS } from "./Data"
 import { useStyles } from "./style";
-
-
 
 export default function LevelTwo({ activeTab, activeMenu, setActiveMenu}) {
 

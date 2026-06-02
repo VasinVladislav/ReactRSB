@@ -1,8 +1,10 @@
 import close from "./icons/close.png";
 import { INDIVIDUALS_MENU_DATA, BUSINESS_MENU_DATA, PRIVATE_MENU_DATA } from "./Data"
 import { useStyles } from "./style";
+import CatalogList from "./utils/CatalogList";
+import Regions from "./utils/Regions";
 
-export default function LevelThree({ activeTab, activeMenu, setActiveMenu }) {
+export default function LevelThree({ activeTab, activeMenu, setActiveMenu, setSelectedCity }) {
 
     const classes = useStyles();
 
@@ -18,21 +20,28 @@ export default function LevelThree({ activeTab, activeMenu, setActiveMenu }) {
             {activeMenu && (
                 <div className={classes.dropdown}>
                     <div className={classes.dropdownContent}>
-                        <div className={classes.column}>
 
-                            {/* Берем массив по ключу из activeMenu и проходим по нему .map() */}
-                            {menuDataThree[activeTab][activeMenu]?.map((item) => (
-                                <button key={item} className={classes.navButton}>
-                                    {item}
-                                </button>
-                            ))}
-                            
-                        </div>
+                        {activeMenu !== 'cities' &&
+                            <CatalogList
+                                data={menuDataThree}
+                                classes={classes}
+                                activeTab={activeTab}
+                                activeMenu={activeMenu}
+                            />
+                        }
+                        {activeMenu === 'cities' &&
+                            <Regions
+                                data={menuDataThree}
+                                classes={classes}
+                                activeTab={activeTab}
+                                activeMenu={activeMenu}
+                                setSelectedCity={setSelectedCity}
+                            />
+                        }
 
                         <button className={classes.closeBtn} onClick={() => setActiveMenu(null)}>
                             <img src={close} alt="Закрыть" />
                         </button>
-
                     </div>
                 </div>
             )}

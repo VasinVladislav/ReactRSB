@@ -1,4 +1,7 @@
-export default function LevelOne({classes, activeTab, setActiveTab, setActiveMenu}) {
+import { useStyles } from "./style"
+
+export default function LevelOne({activeTab, setActiveTab, setActiveMenu}) {
+    const classes = useStyles();
 
     const handleTabChange = (tab) => {
         setActiveTab(tab);

@@ -2,7 +2,6 @@ import { createUseStyles } from 'react-jss'
 
 export const useStyles = createUseStyles({
 
-
     // 3 уровень
     // Описываем анимацию 
     '@keyframes slideDown': {
@@ -20,7 +19,7 @@ export const useStyles = createUseStyles({
         fontFamily: '"Manrope", sans-serif',
         fontSize: 14,
         width: "100%",
-        height: "300px",
+        minHeight: "350px",
         animation: '$slideDown 0.5s ease-out',        //применяем анимацию
         backgroundColor: "white",
         zIndex: 200,
@@ -31,11 +30,13 @@ export const useStyles = createUseStyles({
         marginTop: 35,
         maxWidth: 1580,
         margin: "0px auto",
+        paddingBottom: 35,
         height: "100%",
     },
     column: {
         display: "flex",
         flexDirection: "column",
+        flexWrap: "wrap",
         gap: 12,
     },
     navButton: {
