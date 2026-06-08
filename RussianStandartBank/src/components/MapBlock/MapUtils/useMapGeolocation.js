@@ -21,8 +21,27 @@ export function useMapGeolocation() {
                 mapStateAutoApply: false
             });
 
-            const coords = result.geoObjects.get(0).geometry.getCoordinates();
+            const geoObject = result.geoObjects.get(0);
+            const coords = geoObject.geometry.getCoordinates();
             setUserCoords(coords);
+
+
+            // 1. Сначала берем Административный округ / Область / Республику
+            const areas = geoObject.getAdministrativeAreas();
+            let regionName = areas.length ? areas[0] : null;
+
+            // 2. Если область не вернулась, берем город (как запасной вариант)
+            if (!regionName) {
+                const localities = geoObject.getLocalities();
+                regionName = localities.length ? localities[0] : null;
+            }
+
+            // 3. Отправляем название региона через событие
+            if (regionName) {
+                const event = new CustomEvent('user-city-detected', { detail: regionName });
+                window.dispatchEvent(event);
+            }
+
 
             if (mapRef && mapRef.current) {
                 mapRef.current.setCenter(coords, 10, { duration: 800 });

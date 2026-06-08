@@ -1,8 +1,8 @@
 import close from "./icons/close.png";
 import { INDIVIDUALS_MENU_DATA, BUSINESS_MENU_DATA, PRIVATE_MENU_DATA } from "./Data"
 import { useStyles } from "./style";
-import CatalogList from "./utils/CatalogList";
-import Regions from "./utils/Regions";
+import CatalogList from "./LevelThreeContent/CatalogList";
+import Regions from "./LevelThreeContent/Regions";
 
 export default function LevelThree({ activeTab, activeMenu, setActiveMenu, setSelectedCity }) {
 
@@ -27,6 +27,7 @@ export default function LevelThree({ activeTab, activeMenu, setActiveMenu, setSe
                                 classes={classes}
                                 activeTab={activeTab}
                                 activeMenu={activeMenu}
+                                setActiveMenu={setActiveMenu}
                             />
                         }
                         {activeMenu === 'cities' &&
@@ -35,6 +36,7 @@ export default function LevelThree({ activeTab, activeMenu, setActiveMenu, setSe
                                 classes={classes}
                                 activeTab={activeTab}
                                 activeMenu={activeMenu}
+                                setActiveMenu={setActiveMenu}
                                 setSelectedCity={setSelectedCity}
                             />
                         }
