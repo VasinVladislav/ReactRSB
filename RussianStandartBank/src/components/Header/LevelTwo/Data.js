@@ -18,27 +18,27 @@ import services from "./icons/services.png";
 import shield from "./icons/shield.png";
 
 export const INDIVIDUALS_NAV_ITEMS = [
-    { id: 'credit', text: 'Кредиты', icon: percent },
-    { id: 'house', text: 'Ипотека', icon: house },
-    { id: 'card', text: 'Карты', icon: card },
-    { id: 'deposits', text: 'Вклады', icon: bag },
-    { id: 'investments', text: 'Инвестиции', icon: bar },
-    { id: 'insurance', text: 'Страхование', icon: shield },
-    { id: 'journey', text: 'Путешествия', icon: plane },
-    { id: 'services', text: 'Сервисы', icon: services },
+  { id: "credit", text: "Кредиты", icon: percent },
+  { id: "house", text: "Ипотека", icon: house },
+  { id: "card", text: "Карты", icon: card },
+  { id: "deposits", text: "Вклады", icon: bag },
+  { id: "investments", text: "Инвестиции", icon: bar },
+  { id: "insurance", text: "Страхование", icon: shield },
+  { id: "journey", text: "Путешествия", icon: plane },
+  { id: "services", text: "Сервисы", icon: services },
 ];
 
 export const BUSINESS_NAV_ITEMS = [
-    { id: 'current_account', text: 'Расчётный счёт', icon: money_box },
-    { id: 'registration', text: 'Регистрация бизнеса', icon: startup },
-    { id: 'accounting', text: 'Бухгалтерия', icon: calculator },
-    { id: 'business_cards', text: 'Карты', icon: business_card },
-    { id: 'payments', text: 'Приём платежей', icon: qr_code },
-    { id: 'solutions', text: 'Отраслевые решения', icon: truck },
+  { id: "current_account", text: "Расчётный счёт", icon: money_box },
+  { id: "registration", text: "Регистрация бизнеса", icon: startup },
+  { id: "accounting", text: "Бухгалтерия", icon: calculator },
+  { id: "business_cards", text: "Карты", icon: business_card },
+  { id: "payments", text: "Приём платежей", icon: qr_code },
+  { id: "solutions", text: "Отраслевые решения", icon: truck },
 ];
 export const PRIVATE_NAV_ITEMS = [
-    { id: 'banking', text: 'Банковские услуги', icon: premiumBankIcon },
-    { id: 'wealth', text: 'Инвестиции', icon: diamondIcon },
-    { id: 'consulting', text: 'Консалтинг', icon: strategyIcon },
-    { id: 'lifestyle', text: 'Лайфстайл', icon: conciergeIcon },
+  { id: "banking", text: "Банковские услуги", icon: premiumBankIcon },
+  { id: "wealth", text: "Инвестиции", icon: diamondIcon },
+  { id: "consulting", text: "Консалтинг", icon: strategyIcon },
+  { id: "lifestyle", text: "Лайфстайл", icon: conciergeIcon },
 ];
