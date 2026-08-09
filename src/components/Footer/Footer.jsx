@@ -106,7 +106,7 @@ export default function Footer() {
             </div>
 
             <div className={classes.copyright}>
-              © 2017 – 2026 АО «Банк Русский Стандарт»
+              © 2026 Сверстано в учебных целях
             </div>
           </div>
         </div>

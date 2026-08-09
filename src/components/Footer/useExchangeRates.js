@@ -36,7 +36,5 @@ export function useExchangeRates() {
     checkRates();
   }, []);
 
-
-
   return rates;
 }
