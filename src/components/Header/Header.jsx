@@ -7,12 +7,14 @@ import LevelTwo from "./LevelTwo/Menu.jsx";
 import LevelThree from "./LevelThree/Menu.jsx";
 import { yandexCityDetected } from "./HeaderUtils/yandexCityDetected.js";
 import { getSelectedCity } from "./HeaderUtils/getSelectedCity.js";
+import AuthModal from "../AuthModal/AuthModal.jsx";
 
 export default function Header() {
   const classes = useStyles();
   const [activeTab, setActiveTab] = useState("individuals");
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedCity, setSelectedCity] = useState(() => getSelectedCity());
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   // Слушаем событие автоматического определения региона от ЯндексКарты
   useEffect(() => yandexCityDetected(setSelectedCity), []);
@@ -56,6 +58,7 @@ export default function Header() {
           activeTab={activeTab}
           activeMenu={activeMenu}
           setActiveMenu={setActiveMenu}
+          setIsAuthOpen={setIsAuthOpen}
         />
         <LevelThree
           classes={classes}
@@ -65,6 +68,11 @@ export default function Header() {
           setSelectedCity={setSelectedCity}
         />
       </header>
+      <AuthModal 
+        key={isAuthOpen}
+        isOpen={isAuthOpen} 
+        onClose={() => setIsAuthOpen(false)} 
+      />
     </>
   );
 }

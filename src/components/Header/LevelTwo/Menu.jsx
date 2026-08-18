@@ -8,7 +8,12 @@ import {
 } from "./Data";
 import { useStyles } from "./style";
 
-export default function LevelTwo({ activeTab, activeMenu, setActiveMenu }) {
+export default function LevelTwo({
+  activeTab,
+  activeMenu,
+  setActiveMenu,
+  setIsAuthOpen,
+}) {
   const classes = useStyles();
 
   const menuDataTwo = {
@@ -45,7 +50,10 @@ export default function LevelTwo({ activeTab, activeMenu, setActiveMenu }) {
           <button className={classes.searchBtn}>
             <img src={search} alt="Поиск" />
           </button>
-          <button className={classes.loginBtn}>
+          <button
+            className={classes.loginBtn}
+            onClick={() => setIsAuthOpen(true)}
+          >
             <img src={enter} alt="Вход" /> Интернет-банк
           </button>
         </div>

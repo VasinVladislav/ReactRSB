@@ -1,0 +1,133 @@
+import { createUseStyles } from "react-jss";
+
+export const useStyles = createUseStyles({
+  modalOverlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backdropFilter: "blur(8px)", // Эффект матового стекла
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 9999, // Поверх хедера и карт
+    animation: "$fadeIn 0.3s ease",
+  },
+  modalContent: {
+    backgroundColor: "#fff",
+    padding: "40px",
+    borderRadius: "16px",
+    width: "100%",
+    maxWidth: "400px",
+    position: "relative",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+    animation: "$slideUp 0.3s ease",
+  },
+  closeBtn: {
+    position: "absolute",
+    top: 16,
+    right: 16,
+    background: "none",
+    border: "none",
+    fontSize: "24px",
+    cursor: "pointer",
+    color: "#999",
+    transition: "color 0.2s",
+    "&:hover": { color: "#333" },
+  },
+  modalTitle: {
+    fontSize: "24px",
+    fontWeight: 700,
+    marginBottom: "24px",
+    color: "#1a1a1a",
+    textAlign: "center",
+    fontFamily: "'Manrope', sans-serif",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "20px",
+  },
+  inputGroup: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+  },
+  label: {
+    fontSize: "14px",
+    fontWeight: 500,
+    color: "#666",
+  },
+  passwordWrapper: {
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+  },
+  input: {
+    width: "100%",
+    padding: "12px 16px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+    outline: "none",
+    transition: "border-color 0.2s",
+    "&:focus": { borderColor: "#0052cc" },
+  },
+  inputError: {
+    borderColor: "#ff3b30",
+    "&:focus": { borderColor: "#ff3b30" },
+  },
+  errorText: {
+    fontSize: "12px",
+    color: "#ff3b30",
+    marginTop: "2px",
+  },
+  eyeBtn: {
+    position: "absolute",
+    right: "12px",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "18px",
+  },
+  submitBtn: {
+    width: "100%",
+    padding: "14px",
+    backgroundColor: "#0052cc", // Фирменный синий (или замените на ваш цвет)
+    color: "#fff",
+    border: "none",
+    borderRadius: "8px",
+    fontSize: "16px",
+    fontWeight: 600,
+    cursor: "pointer",
+    transition: "background-color 0.2s, opacity 0.2s",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "48px",
+    "&:hover": { backgroundColor: "#0043a4" },
+    "&:disabled": { opacity: 0.6, cursor: "not-allowed" },
+  },
+  spinner: {
+    width: "20px",
+    height: "20px",
+    border: "2px solid rgba(255,255,255,0.3)",
+    borderRadius: "50%",
+    borderTopColor: "#fff",
+    animation: "$spin 0.8s linear infinite",
+  },
+  // Анимации
+  "@keyframes fadeIn": {
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+  },
+  "@keyframes slideUp": {
+    from: { transform: "translateY(20px)", opacity: 0 },
+    to: { transform: "translateY(0)", opacity: 1 },
+  },
+  "@keyframes spin": {
+    to: { transform: "rotate(360deg)" },
+  },
+});
