@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.7.1",
     "@pbe/react-yandex-maps": "^1.2.5",
     "axios": "^1.19.0",
     "react": "^19.2.5",

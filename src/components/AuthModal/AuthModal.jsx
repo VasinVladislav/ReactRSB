@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-// import { yupResolver } from "@hookform/resolvers/yup";
 import { useStyles } from "./style"; // JSS-стили
 import { phoneSchema, passwordSchema } from "./validationSchema";
 import StepOne from "./AuthComponents/StepOne";
