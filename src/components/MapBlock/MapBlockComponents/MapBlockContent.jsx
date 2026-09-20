@@ -10,7 +10,7 @@ export default function MapBlockContent({ classes, activeTab }) {
 
   return (
     <>
-      {/* 2. Слой с картой */}
+      {/* Слой с картой */}
       <YMaps
         query={{
           apikey: "894225a5-b09a-4d9a-93ad-997f3702d947",

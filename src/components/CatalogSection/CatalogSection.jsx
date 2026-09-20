@@ -4,13 +4,11 @@ import up from "./assets/up.png";
 import face1 from "./assets/face1.png";
 import face2 from "./assets/face2.png";
 import face3 from "./assets/face3.png";
-import {
-  PERSONAL_DATA,
-  YOUTH_DATA,
-  FAMILY_DATA,
-  ENTERTAINMENT_DATA,
-  PREMIUM_DATA,
-} from "./grid/Data.jsx";
+import PersonalFinanceTab from "./grid/PersonalFinanceTab/PersonalFinanceTab.jsx";
+import YouthTab from "./grid/YouthTab/YouthTab.jsx";
+import FamilyTab from "./grid/FamilyTab/FamilyTab.jsx";
+import EntertainmentTab from "./grid/EntertainmentTab/EntertainmentTab.jsx";
+import PremiumTab from "./grid/PremiumTab/PremiumTab.jsx";
 
 // Список ключей для удобного перебора
 const TABS_LIST = ["personal", "youth", "family", "entertainment", "premium"];
@@ -41,14 +39,6 @@ export default function CatalogSection() {
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     setIsAutoPlay(false);
-  };
-
-  const dataMap = {
-    personal: PERSONAL_DATA,
-    youth: YOUTH_DATA,
-    family: FAMILY_DATA,
-    entertainment: ENTERTAINMENT_DATA,
-    premium: PREMIUM_DATA,
   };
 
   return (
@@ -100,18 +90,17 @@ export default function CatalogSection() {
         >
           {/* Обычные карточки */}
           <div className={classes.grid}>
-            {dataMap[activeTab].map((item) => (
-              <div key={item.id} className={classes.card}>
-                <a href={item.href} className={classes.cardHref}>
-                  <div className={classes.cardHeader}>
-                    <img src={item.icon} />
-                    <h3>{item.title}</h3>
-                  </div>
-                  <div className={classes.cardContent}>{item.content}</div>
-                </a>
-              </div>
-            ))}
+            {activeTab === "personal" && (
+              <PersonalFinanceTab classes={classes} />
+            )}
+            {activeTab === "youth" && <YouthTab classes={classes} />}
+            {activeTab === "family" && <FamilyTab classes={classes} />}
+            {activeTab === "entertainment" && (
+              <EntertainmentTab classes={classes} />
+            )}
+            {activeTab === "premium" && <PremiumTab classes={classes} />}
           </div>
+
           {/* Большая черная карточка (Квиз) */}
           <div className={classes.quizCard}>
             <div className={classes.quizCardTop}>
