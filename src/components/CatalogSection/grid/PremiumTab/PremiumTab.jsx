@@ -1,7 +1,7 @@
-import PremCard from "./PremCard/PremCard";
-import PremCashback from "./PremCashback/PremCashback";
-import PremConcierge from "./PremConcierge/PremConcierge";
-import PremWealth from "./PremWealth/PremWealth";
+import PremCard from "./PremiumContent/PremCard";
+import PremCashback from "./PremiumContent/PremCashback";
+import PremConcierge from "./PremiumContent/PremConcierge";
+import PremWealth from "./PremiumContent/PremWealth";
 
 export default function PremiumTab({ classes }) {
   return (

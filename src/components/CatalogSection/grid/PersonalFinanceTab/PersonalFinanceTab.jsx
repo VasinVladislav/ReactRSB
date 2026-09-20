@@ -1,7 +1,7 @@
-import PersonalCredit from "./PersonalCredit/PersonalCredit";
-import PersonalDebit from "./PersonalDebit/PersonalDebit";
-import PersonalInvest from "./PersonalInvest/PersonalInvest";
-import PersonalLoan from "./PersonalLoan/PersonalLoan";
+import PersonalCredit from "./PersonalFinanceContent/PersonalCredit";
+import PersonalDebit from "./PersonalFinanceContent/PersonalDebit";
+import PersonalInvest from "./PersonalFinanceContent/PersonalInvest";
+import PersonalLoan from "./PersonalFinanceContent/PersonalLoan";
 
 export default function PersonalFinanceTab({ classes }) {
   return (

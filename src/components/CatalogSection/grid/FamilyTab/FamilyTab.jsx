@@ -1,7 +1,7 @@
-import FamilyCashback from "./FamilyCashback/FamilyCashback";
-import FamilyDeposit from "./FamilyDeposit/FamilyDeposit";
-import FamilyKids from "./FamilyKids/FamilyKids";
-import FamilyMortgage from "./FamilyMortgage/FamilyMortgage";
+import FamilyCashback from "./FamilyContent/FamilyCashback";
+import FamilyDeposit from "./FamilyContent/FamilyDeposit";
+import FamilyKids from "./FamilyContent/FamilyKids";
+import FamilyMortgage from "./FamilyContent/FamilyMortgage";
 
 export default function FamilyTab({ classes }) {
   return (

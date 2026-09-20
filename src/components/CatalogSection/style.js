@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss'
+import { createUseStyles } from "react-jss";
 
 export const useStyles = createUseStyles({
   section: {
@@ -8,14 +8,14 @@ export const useStyles = createUseStyles({
     width: "100%",
     margin: "150px auto",
     padding: "0 50px",
-    '& *': {
+    "& *": {
       fontFamily: '"Manrope", SemiBold',
-    }
+    },
   },
   mainTitle: {
     fontSize: 54,
-    '@media (max-width: 1580px)': {
-      margin: "0 auto"
+    "@media (max-width: 1580px)": {
+      margin: "0 auto",
     },
   },
   tabs: {
@@ -23,62 +23,62 @@ export const useStyles = createUseStyles({
     alignItems: "center",
     gap: 80,
     margin: "50px 0",
-    '@media (max-width: 1580px)': {
+    "@media (max-width: 1580px)": {
       margin: "50px auto",
       justifyContent: "space-between",
-      gap: 30
+      gap: 30,
     },
   },
   tab: {
-    position: 'relative', // Нужно для позиционирования линии/фона
-    overflow: 'hidden',   // Чтобы прогресс не вылезал за границы
+    position: "relative", // Нужно для позиционирования линии/фона
+    overflow: "hidden", // Чтобы прогресс не вылезал за границы
     background: "none",
     border: "none",
     borderRadius: 20,
     fontSize: 22,
     cursor: "pointer",
-    padding: '10px 20px',
-    transition: 'background-color 0.5s ease',
+    padding: "10px 20px",
+    transition: "background-color 0.5s ease",
   },
   active: {
-    backgroundColor: 'rgba(225, 203, 254, 0.3)', // Черный фон для активной вкладки
+    backgroundColor: "rgba(225, 203, 254, 0.3)", // Черный фон для активной вкладки
     borderRadius: 20,
-    '&::before': {
+    "&::before": {
       borderRadius: 20,
       content: '""',
-      position: 'absolute',
+      position: "absolute",
       top: 0,
       left: 0,
       bottom: 0,
-      width: '100%',
-      backgroundColor: '#E1CBFE', // Основной цвет заливки
+      width: "100%",
+      backgroundColor: "#E1CBFE", // Основной цвет заливки
       zIndex: -1,
-      transformOrigin: 'left',
-      animation: '$progress 5s linear forwards', // Анимация на 5 секунд
+      transformOrigin: "left",
+      animation: "$progress 5s linear forwards", // Анимация на 5 секунд
     },
   },
   paused: {
-    '&::before': {
-      animation: 'none !important', // Останавливаем прогресс, если юзер кликнул
-      transform: 'scaleX(1)',       // Оставляем вкладку полностью закрашенной
-    }
-  },
-  '@keyframes progress': {
-    '0%': {
-      transform: 'scaleX(0)',
+    "&::before": {
+      animation: "none !important", // Останавливаем прогресс, если юзер кликнул
+      transform: "scaleX(1)", // Оставляем вкладку полностью закрашенной
     },
-    '100%': {
-      transform: 'scaleX(1)',
-    }
+  },
+  "@keyframes progress": {
+    "0%": {
+      transform: "scaleX(0)",
+    },
+    "100%": {
+      transform: "scaleX(1)",
+    },
   },
   main: {
     display: "flex",
     gap: 40,
     width: "100%",
-    '@media (max-width: 1580px)': {
+    "@media (max-width: 1580px)": {
       flexDirection: "column",
       maxWidth: "1000px",
-      margin: "0 auto"
+      margin: "0 auto",
     },
   },
   grid: {
@@ -88,21 +88,23 @@ export const useStyles = createUseStyles({
     gap: 40,
     width: "66%",
     // Применяем анимацию ко всему гриду
-    animation: '$fadeIn 0.5s ease-in-out',
-    '@media (max-width: 1580px)': {
-      width: "100%"
+    animation: "$fadeIn 0.5s ease-in-out",
+    "@media (max-width: 1580px)": {
+      width: "100%",
     },
   },
-  '@keyframes fadeIn': {
+  "@keyframes fadeIn": {
     from: {
       opacity: 0,
-      transform: 'translateY(10px)', // Легкий эффект вылета снизу
+      transform: "translateY(10px)", // Легкий эффект вылета снизу
     },
     to: {
       opacity: 1,
-      transform: 'translateY(0)',
-    }
+      transform: "translateY(0)",
+    },
   },
+  /******************************************************************************************************************************************************************/
+  // Карточки
   card: {
     display: "flex",
     flexDirection: "column",
@@ -119,7 +121,7 @@ export const useStyles = createUseStyles({
     flexDirection: "column",
     justifyContent: "space-between",
     textDecoration: "none",
-    color: "black"
+    color: "black",
   },
   cardHeader: {
     display: "flex",
@@ -137,38 +139,38 @@ export const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "space-between",
 
-    '& .cardRow': {
+    "& .cardRow": {
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
       gap: 10,
       width: "200px",
     },
-    '& .cardColumn': {
+    "& .cardColumn": {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       textAlign: "center",
       width: "200px",
-      maxHeight: 70
+      maxHeight: 70,
     },
-    '& .card-number-row': {
-      display: 'flex',
-      alignItems: 'baseline',
-      gap: '4px',
-      maxWidth: 100
+    "& .card-number-row": {
+      display: "flex",
+      alignItems: "baseline",
+      gap: "4px",
+      maxWidth: 100,
     },
-    '& .digit': {
+    "& .digit": {
       fontSize: 40,
     },
-    '& .sign': {
+    "& .sign": {
       fontSize: 18,
     },
-    '& .text': {
+    "& .text": {
       fontSize: 14,
     },
   },
-
+  /******************************************************************************************************************************************************************/
   // Карта квиз
   quizCard: {
     width: "33%",
@@ -179,62 +181,62 @@ export const useStyles = createUseStyles({
     backgroundColor: "#000000",
     color: "#FFFFFF",
     borderRadius: 20,
-    '@media (max-width: 1580px)': {
+    "@media (max-width: 1580px)": {
       width: "100%",
-      flexDirection: "row"
+      flexDirection: "row",
     },
-    '& h3': {
+    "& h3": {
       fontSize: 32,
       maxWidth: 420,
-      marginBottom: 15
+      marginBottom: 15,
     },
-    '& p': {
+    "& p": {
       fontSize: 14,
       maxWidth: 280,
-    }
+    },
   },
   quizTextBot: {
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     gap: 10,
-    '& img': {
+    "& img": {
       width: 25,
-      height: 25
-    }
+      height: 25,
+    },
   },
   quizFooter: {
     display: "flex",
   },
   circle: {
-    width: '50px',
-    height: '50px',
-    borderRadius: '50%',
+    width: "50px",
+    height: "50px",
+    borderRadius: "50%",
     // Белая рамка создает эффект выреза (цвет должен совпадать с фоном баннера)
-    border: '2px solid #fff',
+    border: "2px solid #fff",
     // Наложение: сдвигаем каждый следующий круг влево
-    marginLeft: '-15px',
-    position: 'relative',
+    marginLeft: "-15px",
+    position: "relative",
 
-    '&:first-child': {
+    "&:first-child": {
       marginLeft: 0,
-      zIndex: 1 // Первый (лого) — самый верхний
+      zIndex: 1, // Первый (лого) — самый верхний
     },
-    '&:nth-child(2)': { zIndex: 2 },
-    '&:nth-child(3)': { zIndex: 3 },
-    '&:last-child': { zIndex: 4 },
+    "&:nth-child(2)": { zIndex: 2 },
+    "&:nth-child(3)": { zIndex: 3 },
+    "&:last-child": { zIndex: 4 },
   },
   quizBtn: {
     height: 50,
     borderRadius: 30,
     // Белая рамка создает эффект выреза (цвет должен совпадать с фоном баннера)
-    border: 'none',
+    border: "none",
     backgroundColor: "#EDF860",
     // Наложение: сдвигаем каждый следующий круг влево
-    marginLeft: '-15px',
-    position: 'relative',
+    marginLeft: "-15px",
+    position: "relative",
     zIndex: 5,
-    display: 'flex',
+    display: "flex",
     flexDirection: "row",
     gap: 10,
     alignItems: "center",
@@ -243,12 +245,11 @@ export const useStyles = createUseStyles({
   },
   quizCounter: {
     fontSize: 36,
-    fontFamily: "Inter Regular"
+    fontFamily: "Inter Regular",
   },
   quizText: {
     fontSize: 12,
     fontFamily: "Inter Regular",
-    width: 90
+    width: 90,
   },
-})
-
+});

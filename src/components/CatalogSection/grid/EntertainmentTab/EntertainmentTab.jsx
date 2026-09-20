@@ -1,7 +1,7 @@
-import EntCinema from "./EntCinema/EntCinema";
-import EntEvents from "./EntEvents/EntEvents";
-import EntGames from "./EntGames/EntGames";
-import EntRestaurants from "./EntRestaurants/EntRestaurants";
+import EntCinema from "./EntertainmentContent/EntCinema";
+import EntEvents from "./EntertainmentContent/EntEvents";
+import EntGames from "./EntertainmentContent/EntGames";
+import EntRestaurants from "./EntertainmentContent/EntRestaurants";
 
 export default function EntertainmentTab({ classes }) {
   return (

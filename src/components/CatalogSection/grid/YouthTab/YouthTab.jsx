@@ -1,7 +1,7 @@
-import YouthCard from "./YouthCard/YouthCard";
-import YouthEducation from "./YouthEducation/YouthEducation";
-import YouthSub from "./YouthSub/YouthSub";
-import YouthTravel from "./YouthTravel/YouthTravel";
+import YouthCard from "./YouthContent/YouthCard";
+import YouthEducation from "./YouthContent/YouthEducation";
+import YouthSub from "./YouthContent/YouthSub";
+import YouthTravel from "./YouthContent/YouthTravel";
 
 export default function YouthTab({ classes }) {
   return (

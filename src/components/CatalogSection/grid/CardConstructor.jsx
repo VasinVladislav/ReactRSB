@@ -19,3 +19,29 @@ export default function CardConstructor({
     </>
   );
 }
+export function CardRow({ prefix, value, suffix, text }) {
+  return (
+    <>
+      <div className="cardRow">
+        <div className="card-number-row">
+          <span>{prefix}</span>
+          <span className="digit">{value}</span>
+          <span className="sign">{suffix}</span>
+        </div>
+        <span className="text">{text}</span>
+      </div>
+    </>
+  );
+}
+export function CardColumn({ topText, botText }) {
+  return (
+    <>
+      <div className="cardColumn">
+        <span>
+          <b>{topText}</b>
+        </span>
+        <span>{botText}</span>
+      </div>
+    </>
+  );
+}
