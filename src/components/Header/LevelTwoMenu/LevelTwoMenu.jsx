@@ -1,30 +1,20 @@
 import { createPortal } from "react-dom";
-import enter from "./icons/enter.png";
-import search from "./icons/search.png";
-import {
-  INDIVIDUALS_NAV_ITEMS,
-  BUSINESS_NAV_ITEMS,
-  PRIVATE_NAV_ITEMS,
-} from "./Data";
+import enter from "../icons/enter.png";
+import search from "../icons/search.png";
+import { MENU_DATA } from "../menuData/menuData";
 import { useStyles } from "./style";
 
 export default function LevelTwo({
-  activeTab,
-  activeMenu,
-  setActiveMenu,
+  levelOneTab,
+  levelTwoTab,
+  setLevelTwoTab,
   setIsAuthOpen,
 }) {
   const classes = useStyles();
 
-  const menuDataTwo = {
-    individuals: INDIVIDUALS_NAV_ITEMS,
-    business: BUSINESS_NAV_ITEMS,
-    private: PRIVATE_NAV_ITEMS,
-  };
-
   // Универсальная функция переключения
   const toggleMenu = (menuName) => {
-    setActiveMenu(activeMenu === menuName ? null : menuName);
+    setLevelTwoTab(levelTwoTab === menuName ? null : menuName);
   };
 
   return (
@@ -33,11 +23,11 @@ export default function LevelTwo({
       <div className={classes.botHeader}>
         {/* Навигация */}
         <nav className={classes.botNav}>
-          {menuDataTwo[activeTab].map((item) => (
+          {Object.values(MENU_DATA[levelOneTab])?.map((item) => (
             <button
               key={item.id}
               onClick={() => toggleMenu(item.id)}
-              className={`${classes.navButton} ${activeMenu === item.id ? classes.active : ""}`}
+              className={`${classes.navButton} ${levelTwoTab === item.id ? classes.active : ""}`}
             >
               <img src={item.icon} className={classes.icon} alt="" />
               {item.text}
@@ -60,11 +50,11 @@ export default function LevelTwo({
       </div>
 
       {/* Рендерим оверлей ВНЕ хедера через Портал */}
-      {activeMenu &&
+      {levelTwoTab &&
         createPortal(
           <div
             className={classes.overlay}
-            onClick={() => setActiveMenu(null)}
+            onClick={() => setLevelTwoTab(null)}
           />,
           document.body, // Телепортируем его прямо в body страницы
         )}

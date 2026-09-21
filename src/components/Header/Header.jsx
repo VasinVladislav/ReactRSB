@@ -2,22 +2,22 @@ import { useStyles } from "./style";
 import { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import { scrollToId } from "../../utils/scroll.js";
-import LevelOne from "./LevelOne/Menu.jsx";
-import LevelTwo from "./LevelTwo/Menu.jsx";
-import LevelThree from "./LevelThree/Menu.jsx";
+import LevelOne from "./LevelOneMenu/LevelOneMenu.jsx";
+import LevelTwo from "./LevelTwoMenu/LevelTwoMenu.jsx";
+import LevelThree from "./LevelThreeMenu/LevelThreeMenu.jsx";
 import { yandexCityDetected } from "./HeaderUtils/yandexCityDetected.js";
 import { getSelectedCity } from "./HeaderUtils/getSelectedCity.js";
 import AuthModal from "../AuthModal/AuthModal.jsx";
 
 export default function Header() {
   const classes = useStyles();
-  const [activeTab, setActiveTab] = useState("individuals");
-  const [activeMenu, setActiveMenu] = useState(null);
+  const [levelOneTab, setLevelOneTab] = useState("individuals");
+  const [levelTwoTab, setLevelTwoTab] = useState(null);
   const [selectedCity, setSelectedCity] = useState(() => getSelectedCity());
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   // Слушаем событие автоматического определения региона от ЯндексКарты
-  useEffect(() => yandexCityDetected(setSelectedCity), []);
+  useEffect(() => yandexCityDetected(setSelectedCity), []);  
 
   return (
     <>
@@ -29,9 +29,9 @@ export default function Header() {
               <img src={logo} alt="Русский Стандарт Банк" />
             </div>
             <LevelOne
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-              setActiveMenu={setActiveMenu}
+              levelOneTab={levelOneTab}
+              setLevelOneTab={setLevelOneTab}
+              setLevelTwoTab={setLevelTwoTab}
             />
           </div>
           <div className={classes.topNav}>
@@ -44,7 +44,7 @@ export default function Header() {
             </button>
             <button
               className={classes.navButton}
-              onClick={() => setActiveMenu("cities")}
+              onClick={() => setLevelTwoTab("cities")}
             >
               {selectedCity.text}
             </button>
@@ -55,16 +55,15 @@ export default function Header() {
 
         <hr className={classes.line} />
         <LevelTwo
-          activeTab={activeTab}
-          activeMenu={activeMenu}
-          setActiveMenu={setActiveMenu}
+          levelOneTab={levelOneTab}
+          levelTwoTab={levelTwoTab}
+          setLevelTwoTab={setLevelTwoTab}
           setIsAuthOpen={setIsAuthOpen}
         />
         <LevelThree
-          classes={classes}
-          activeTab={activeTab}
-          activeMenu={activeMenu}
-          setActiveMenu={setActiveMenu}
+          levelOneTab={levelOneTab}
+          levelTwoTab={levelTwoTab}
+          setLevelTwoTab={setLevelTwoTab}
           setSelectedCity={setSelectedCity}
         />
       </header>

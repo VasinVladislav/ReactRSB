@@ -1,4 +1,4 @@
-import { REGIONS_MENU_DATA } from "../LevelThree/Cities";
+import { REGIONS_MENU_DATA } from "../LevelThreeMenu/regionsData";
 
 // Функция поиска региона в REGIONS_MENU_DATA по названию области/республики от Яндекса
 export const findRegionByYmapsName = (ymapsRegionName) => {
@@ -28,7 +28,7 @@ export const findRegionByYmapsName = (ymapsRegionName) => {
         .replace(" край", "")
         .trim();
 
-      // Проверяем частичное или полное совпадение корней (например, "татарстан" и "татарстан")
+      // Проверяем частичное или полное совпадение корней
       return cleanText.includes(cleanTarget) || cleanTarget.includes(cleanText);
     });
 

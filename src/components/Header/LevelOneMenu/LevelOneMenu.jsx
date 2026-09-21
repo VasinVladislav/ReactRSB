@@ -1,30 +1,30 @@
 import { useStyles } from "./style";
 
-export default function LevelOne({ activeTab, setActiveTab, setActiveMenu }) {
+export default function LevelOne({ levelOneTab, setLevelOneTab, setLevelTwoTab }) {
   const classes = useStyles();
 
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setActiveMenu(null);
-  };
+    setLevelOneTab(tab); 
+    setLevelTwoTab(null);  
+  }; 
 
   return (
     <>
       <nav className={classes.topNav}>
         <button
-          className={`${classes.navButton} ${activeTab === "individuals" ? classes.active : ""}`}
+          className={`${classes.navButton} ${levelOneTab === "individuals" ? classes.active : ""}`}
           onClick={() => handleTabChange("individuals")}
         >
           Частным клиентам
         </button>
         <button
-          className={`${classes.navButton} ${activeTab === "business" ? classes.active : ""}`}
+          className={`${classes.navButton} ${levelOneTab === "business" ? classes.active : ""}`}
           onClick={() => handleTabChange("business")}
         >
           Для бизнеса
         </button>
         <button
-          className={`${classes.navButton} ${activeTab === "private" ? classes.active : ""}`}
+          className={`${classes.navButton} ${levelOneTab === "private" ? classes.active : ""}`}
           onClick={() => handleTabChange("private")}
         >
           Private Banking

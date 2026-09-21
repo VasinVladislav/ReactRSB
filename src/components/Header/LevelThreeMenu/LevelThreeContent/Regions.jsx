@@ -1,11 +1,8 @@
 // Список регионов
-
+import { REGIONS_MENU_DATA } from "../regionsData";
 export default function Regions({
-  data,
   classes,
-  activeTab,
-  activeMenu,
-  setActiveMenu,
+  setLevelTwoTab, 
   setSelectedCity,
 }) {
   const handleCityClick = (item) => {
@@ -22,7 +19,7 @@ export default function Regions({
     window.dispatchEvent(event);
 
     // 4. Закрываем выпадающее меню
-    setActiveMenu(null);
+    setLevelTwoTab(null);
   };
 
   return (
@@ -38,7 +35,7 @@ export default function Regions({
             margin: "0 auto",
           }}
         >
-          {data[activeTab][activeMenu]?.map(
+          {REGIONS_MENU_DATA?.map(
             (group) =>
               group.category && (
                 <div key={group.category} style={{ margin: 15 }}>
@@ -68,7 +65,7 @@ export default function Regions({
             margin: "0 auto",
           }}
         >
-          {data[activeTab][activeMenu]?.map(
+          {REGIONS_MENU_DATA?.map(
             (group) =>
               group.letter && (
                 <div key={group.letter} style={{ margin: 15 }}>

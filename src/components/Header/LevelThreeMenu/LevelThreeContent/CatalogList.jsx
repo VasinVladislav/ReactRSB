@@ -1,23 +1,24 @@
 // Список с предложениями банка
 
+import { MENU_DATA } from "../../menuData/menuData";
+
 export default function CatalogList({
-  data,
   classes,
-  activeTab,
-  activeMenu,
-  setActiveMenu,
+  levelOneTab,
+  levelTwoTab,
+  setLevelTwoTab,
 }) {
   return (
     <>
       {/* Третий уровень */}
       <div className={classes.column}>
-        {data[activeTab][activeMenu]?.map((item) => (
+        {MENU_DATA[levelOneTab][levelTwoTab].items?.map((item) => (
           <button
             key={item.id}
             className={classes.navButton}
             onClick={() => (
               window.open(item.href, "_blank"),
-              setActiveMenu(null)
+              setLevelTwoTab(null)
             )}
           >
             {item.text}

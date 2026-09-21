@@ -1,56 +1,42 @@
 import close from "./icons/close.png";
-import {
-  INDIVIDUALS_MENU_DATA,
-  BUSINESS_MENU_DATA,
-  PRIVATE_MENU_DATA,
-} from "./Data";
 import { useStyles } from "./style";
 import CatalogList from "./LevelThreeContent/CatalogList";
 import Regions from "./LevelThreeContent/Regions";
 
+
 export default function LevelThree({
-  activeTab,
-  activeMenu,
-  setActiveMenu,
+  levelOneTab,
+  levelTwoTab,
+  setLevelTwoTab,
   setSelectedCity,
 }) {
   const classes = useStyles();
 
-  const menuDataThree = {
-    individuals: INDIVIDUALS_MENU_DATA,
-    business: BUSINESS_MENU_DATA,
-    private: PRIVATE_MENU_DATA,
-  };
-
   return (
     <>
       {/* Третий уровень */}
-      {activeMenu && (
+      {levelTwoTab && (
         <div className={classes.dropdown}>
           <div className={classes.dropdownContent}>
-            {activeMenu !== "cities" && (
+            {levelTwoTab !== "cities" && (
               <CatalogList
-                data={menuDataThree}
                 classes={classes}
-                activeTab={activeTab}
-                activeMenu={activeMenu}
-                setActiveMenu={setActiveMenu}
+                levelOneTab={levelOneTab}
+                levelTwoTab={levelTwoTab}
+                setLevelTwoTab={setLevelTwoTab}
               />
             )}
-            {activeMenu === "cities" && (
+            {levelTwoTab === "cities" && (
               <Regions
-                data={menuDataThree}
                 classes={classes}
-                activeTab={activeTab}
-                activeMenu={activeMenu}
-                setActiveMenu={setActiveMenu}
+                setLevelTwoTab={setLevelTwoTab}
                 setSelectedCity={setSelectedCity}
               />
             )}
 
             <button
               className={classes.closeBtn}
-              onClick={() => setActiveMenu(null)}
+              onClick={() => setLevelTwoTab(null)}
             >
               <img src={close} alt="Закрыть" />
             </button>
