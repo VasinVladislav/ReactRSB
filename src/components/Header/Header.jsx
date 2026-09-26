@@ -18,6 +18,7 @@ export default function Header() {
 
   // Слушаем событие автоматического определения региона от ЯндексКарты
   useEffect(() => yandexCityDetected(setSelectedCity), []);  
+  useEffect(()=>{},[]);
 
   return (
     <>
