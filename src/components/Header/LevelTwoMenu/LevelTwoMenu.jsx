@@ -1,21 +1,17 @@
 import { createPortal } from "react-dom";
 import enter from "../icons/enter.png";
 import search from "../icons/search.png";
-import { MENU_DATA } from "../menuData/menuData";
 import { useStyles } from "./style";
+import * as Icons from "./icons";
 
 export default function LevelTwo({
+  levelTwoData,
   levelOneTab,
   levelTwoTab,
-  setLevelTwoTab,
   setIsAuthOpen,
+  handleTabChange,
 }) {
   const classes = useStyles();
-
-  // Универсальная функция переключения
-  const toggleMenu = (menuName) => {
-    setLevelTwoTab(levelTwoTab === menuName ? null : menuName);
-  };
 
   return (
     <>
@@ -23,13 +19,13 @@ export default function LevelTwo({
       <div className={classes.botHeader}>
         {/* Навигация */}
         <nav className={classes.botNav}>
-          {Object.values(MENU_DATA[levelOneTab])?.map((item) => (
+          {levelTwoData?.map((item) => (
             <button
               key={item.id}
-              onClick={() => toggleMenu(item.id)}
-              className={`${classes.navButton} ${levelTwoTab === item.id ? classes.active : ""}`}
+              onClick={() => handleTabChange(levelOneTab, item.name)}
+              className={`${classes.navButton} ${levelTwoTab === item.name ? classes.active : ""}`}
             >
-              <img src={item.icon} className={classes.icon} alt="" />
+              <img src={Icons[item.icon]} className={classes.icon} alt="" />
               {item.text}
             </button>
           ))}
@@ -54,7 +50,7 @@ export default function LevelTwo({
         createPortal(
           <div
             className={classes.overlay}
-            onClick={() => setLevelTwoTab(null)}
+            onClick={() => handleTabChange(levelOneTab, null)}
           />,
           document.body, // Телепортируем его прямо в body страницы
         )}

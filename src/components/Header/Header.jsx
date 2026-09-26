@@ -8,17 +8,41 @@ import LevelThree from "./LevelThreeMenu/LevelThreeMenu.jsx";
 import { yandexCityDetected } from "./HeaderUtils/yandexCityDetected.js";
 import { getSelectedCity } from "./HeaderUtils/getSelectedCity.js";
 import AuthModal from "../AuthModal/AuthModal.jsx";
+import axios from "axios";
 
 export default function Header() {
   const classes = useStyles();
-  const [levelOneTab, setLevelOneTab] = useState("individuals");
+  const [levelOneData, setLevelOneData] = useState([]);
+  const [levelOneTab, setLevelOneTab] = useState(null);
   const [levelTwoTab, setLevelTwoTab] = useState(null);
   const [selectedCity, setSelectedCity] = useState(() => getSelectedCity());
+  const [cityMenuOpen, setCityMenuOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
+  const url = "http://localhost:5000/api/HeaderMenu";
+
   // Слушаем событие автоматического определения региона от ЯндексКарты
-  useEffect(() => yandexCityDetected(setSelectedCity), []);  
-  useEffect(()=>{},[]);
+  useEffect(() => yandexCityDetected(setSelectedCity), []);
+
+  useEffect(() => {
+    axios.get(url).then((res) => {
+      setLevelOneData(res.data);
+      setLevelOneTab(res.data[0].name);
+    });
+  }, []);
+
+  const levelTwoData = levelOneData?.find(
+    (tab) => tab.name === levelOneTab,
+  )?.items;
+  const levelThreeData = levelTwoData?.find(
+    (tab) => tab.name === levelTwoTab,
+  )?.items;
+
+  const handleTabChange = (tabOne, tabTwo) => {
+    setLevelOneTab(tabOne);
+    setLevelTwoTab(levelTwoTab === tabTwo ? null : tabTwo);
+    setCityMenuOpen(false);
+  };
 
   return (
     <>
@@ -30,9 +54,9 @@ export default function Header() {
               <img src={logo} alt="Русский Стандарт Банк" />
             </div>
             <LevelOne
+              levelOneData={levelOneData}
               levelOneTab={levelOneTab}
-              setLevelOneTab={setLevelOneTab}
-              setLevelTwoTab={setLevelTwoTab}
+              handleTabChange={handleTabChange}
             />
           </div>
           <div className={classes.topNav}>
@@ -45,7 +69,7 @@ export default function Header() {
             </button>
             <button
               className={classes.navButton}
-              onClick={() => setLevelTwoTab("cities")}
+              onClick={() => {setCityMenuOpen(true); setLevelTwoTab(true);}}
             >
               {selectedCity.text}
             </button>
@@ -56,22 +80,25 @@ export default function Header() {
 
         <hr className={classes.line} />
         <LevelTwo
+          levelTwoData={levelTwoData}
           levelOneTab={levelOneTab}
           levelTwoTab={levelTwoTab}
-          setLevelTwoTab={setLevelTwoTab}
           setIsAuthOpen={setIsAuthOpen}
+          handleTabChange={handleTabChange}
         />
         <LevelThree
+          levelThreeData={levelThreeData}
           levelOneTab={levelOneTab}
           levelTwoTab={levelTwoTab}
-          setLevelTwoTab={setLevelTwoTab}
+          cityMenuOpen={cityMenuOpen}
           setSelectedCity={setSelectedCity}
+          handleTabChange={handleTabChange}
         />
       </header>
-      <AuthModal 
+      <AuthModal
         key={isAuthOpen}
-        isOpen={isAuthOpen} 
-        onClose={() => setIsAuthOpen(false)} 
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
       />
     </>
   );

@@ -18,7 +18,22 @@ import services from "../icons/services.png";
 import shield from "../icons/shield.png";
 
 export {
-  bar, bag, calculator, card, business_card, truck, strategyIcon,
-  house, diamondIcon, conciergeIcon, money_box, percent, plane,
-  premiumBankIcon, qr_code, startup, services, shield
+  bar,
+  bag,
+  calculator,
+  card,
+  business_card,
+  truck,
+  strategyIcon,
+  house,
+  diamondIcon,
+  conciergeIcon,
+  money_box,
+  percent,
+  plane,
+  premiumBankIcon,
+  qr_code,
+  startup,
+  services,
+  shield,
 };

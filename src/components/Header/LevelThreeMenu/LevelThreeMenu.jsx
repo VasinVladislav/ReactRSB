@@ -3,12 +3,13 @@ import { useStyles } from "./style";
 import CatalogList from "./LevelThreeContent/CatalogList";
 import Regions from "./LevelThreeContent/Regions";
 
-
 export default function LevelThree({
+  levelThreeData,
   levelOneTab,
   levelTwoTab,
-  setLevelTwoTab,
+  cityMenuOpen,
   setSelectedCity,
+  handleTabChange,
 }) {
   const classes = useStyles();
 
@@ -18,25 +19,27 @@ export default function LevelThree({
       {levelTwoTab && (
         <div className={classes.dropdown}>
           <div className={classes.dropdownContent}>
-            {levelTwoTab !== "cities" && (
+            {levelTwoTab && (
               <CatalogList
                 classes={classes}
                 levelOneTab={levelOneTab}
                 levelTwoTab={levelTwoTab}
-                setLevelTwoTab={setLevelTwoTab}
+                handleTabChange={handleTabChange}
+                levelThreeData={levelThreeData}
               />
             )}
-            {levelTwoTab === "cities" && (
+            {cityMenuOpen && (
               <Regions
                 classes={classes}
-                setLevelTwoTab={setLevelTwoTab}
+                levelOneTab={levelOneTab}
+                handleTabChange={handleTabChange}
                 setSelectedCity={setSelectedCity}
               />
             )}
 
             <button
               className={classes.closeBtn}
-              onClick={() => setLevelTwoTab(null)}
+              onClick={() => handleTabChange(levelOneTab, null)}
             >
               <img src={close} alt="Закрыть" />
             </button>

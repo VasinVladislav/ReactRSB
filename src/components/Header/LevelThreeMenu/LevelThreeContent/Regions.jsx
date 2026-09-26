@@ -2,7 +2,8 @@
 import { REGIONS_MENU_DATA } from "../regionsData";
 export default function Regions({
   classes,
-  setLevelTwoTab, 
+  levelOneTab,
+  handleTabChange, 
   setSelectedCity,
 }) {
   const handleCityClick = (item) => {
@@ -19,7 +20,7 @@ export default function Regions({
     window.dispatchEvent(event);
 
     // 4. Закрываем выпадающее меню
-    setLevelTwoTab(null);
+    handleTabChange(levelOneTab, null);
   };
 
   return (
