@@ -1,9 +1,8 @@
-// Список регионов
-import { REGIONS_MENU_DATA } from "../regionsData";
 export default function Regions({
   classes,
   levelOneTab,
-  handleTabChange, 
+  handleTabChange,
+  locationMenuData,
   setSelectedCity,
 }) {
   const handleCityClick = (item) => {
@@ -23,71 +22,72 @@ export default function Regions({
     handleTabChange(levelOneTab, null);
   };
 
+  const popularCities = [];
+  const alphabetGroups = {};
+
+  locationMenuData.forEach((item) => {
+    // Выделяем Москву и Питер в отдельный список
+    if (
+      item.name === "moscow_and_region" ||
+      item.name === "saint_petersburg_and_region"
+    ) {
+      popularCities.push(item);
+    } else {
+      // Для остальных берем первую букву
+      const firstLetter = item.text.charAt(0).toUpperCase();
+      // Если в объекте нет такого ключа(буквы), то создаём ключ и массив
+      if (!alphabetGroups[firstLetter]) {
+        alphabetGroups[firstLetter] = [];
+      }
+      // Добавляем город с firstLetter'ом в массив под такой буквой(ключом)
+      alphabetGroups[firstLetter].push(item);
+    }
+  });
+
+  const sortedLetters = Object.entries(alphabetGroups).sort((a, b) =>
+    a[0].localeCompare(b[0]),
+  );
+
   return (
     <>
       {/* Третий уровень */}
       {/* Для Москвы и Петербурга */}
-      <div style={{ margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flexWrap: "wrap",
-            margin: "0 auto",
-          }}
-        >
-          {REGIONS_MENU_DATA?.map(
-            (group) =>
-              group.category && (
-                <div key={group.category} style={{ margin: 15 }}>
-                  <ul>
-                    {group.items.map((item) => (
-                      <li key={item.id} style={{ listStyleType: "none" }}>
-                        <button
-                          className={classes.navButton}
-                          onClick={() => handleCityClick(item)}
-                        >
-                          {item.text}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ),
-          )}
+      <div className={classes.regions}>
+        <div className={classes.regionsTop}>
+          <ul>
+            {popularCities.map((item) => (
+              <li key={item.id}>
+                <button
+                  className={classes.navButton}
+                  onClick={() => handleCityClick(item)}
+                >
+                  {item.text}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
         {/* Для остальных */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            flexWrap: "wrap",
-            maxHeight: 550,
-            margin: "0 auto",
-          }}
-        >
-          {REGIONS_MENU_DATA?.map(
-            (group) =>
-              group.letter && (
-                <div key={group.letter} style={{ margin: 15 }}>
-                  <p>
-                    <strong>{group.letter}</strong>
-                  </p>
-                  <ul>
-                    {group.items.map((item) => (
-                      <li key={item.id} style={{ listStyleType: "none" }}>
-                        <button
-                          className={classes.navButton}
-                          onClick={() => handleCityClick(item)}
-                        >
-                          {item.text}
-                        </button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ),
-          )}
+        <div className={classes.regionsMain}>
+          {sortedLetters.map(([letter, items]) => (
+            <div key={letter}>
+              <p>
+                <strong>{letter}</strong>
+              </p>
+              <ul>
+                {items.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      className={classes.navButton}
+                      onClick={() => handleCityClick(item)}
+                    >
+                      {item.text}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </>

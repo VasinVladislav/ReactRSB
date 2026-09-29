@@ -45,14 +45,14 @@ export const useStyles = createUseStyles({
     padding: "0px",
     borderRadius: 20,
     cursor: "pointer", // Делаем курсор "ручкой" при наведении
-    color: "#000", // Цвет текста (можно поменять)
+    color: "#000", // Цвет текста
     outline: "none", // Убираем синюю обводку при клике
-    display: "flex", // Если внутри есть иконка и текст
+    display: "flex",
     alignItems: "center",
     gap: "8px", // Отступ между иконкой и текстом
 
     "&:hover": {
-      color: "#828282", // Цвет при наведении (например, красный)
+      color: "#828282", // Цвет при наведении
     },
   },
   closeBtn: {
@@ -70,6 +70,40 @@ export const useStyles = createUseStyles({
     to: {
       opacity: 1,
       backdropFilter: "blur(4px)", // Плавно размываем до 4px
+    },
+  },
+  // Список регионов
+  regions: {
+    margin: "0 auto",
+  },
+  regionsTop: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    margin: "0 auto",
+    padding: 15,
+    "& li": {
+      listStyleType: "none",
+    },
+  },
+  regionsMain: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    maxHeight: 550,
+    margin: "0 auto",
+    "& div": {
+      margin: 15,
+    },
+    "& li": {
+      listStyleType: "none",
+    },
+    "& p": {
+      margin: "0 0 5px 0",
+    },
+    "& ul": {
+      paddingLeft: 0,
+      margin: 0,
     },
   },
 });

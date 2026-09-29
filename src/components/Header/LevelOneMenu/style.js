@@ -1,6 +1,30 @@
 import { createUseStyles } from "react-jss";
 
 export const useStyles = createUseStyles({
+  topHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: 40,
+    margin: "0px auto",
+    maxWidth: 1680,
+    padding: "0px 50px",
+  },
+  topLeft: {
+    display: "flex",
+    gap: 20,
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  logoImg: {
+    position: "relative",
+    left: -20,
+  },
+  "&:not(:nth-last-child(-n+2))": {
+    "@media (max-width: 1399px)": {
+      display: "none",
+    },
+  },
   topNav: {
     display: "flex",
     gap: 20,
@@ -25,5 +49,13 @@ export const useStyles = createUseStyles({
     border: "none",
     outline: "2px solid black",
     outlineOffset: "10px" /* Зазор 8px между кнопкой и рамкой */,
+  },
+  line: {
+    position: "absolute",
+    zIndex: 5000,
+    top: 125,
+    left: 0,
+    right: 0,
+    border: "1px solid black",
   },
 });
