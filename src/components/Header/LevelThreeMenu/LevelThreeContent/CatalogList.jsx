@@ -14,10 +14,10 @@ export default function CatalogList({
           <button
             key={item.id}
             className={classes.navButton}
-            onClick={() => (
-              window.open(item.href, "_blank"),
-              handleTabChange(levelOneTab, null)
-            )}
+            onClick={() => {
+              window.open(item.href, "_blank");
+              handleTabChange(levelOneTab, null);
+            }}
           >
             {item.text}
           </button>

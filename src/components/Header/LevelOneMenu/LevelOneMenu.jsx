@@ -7,7 +7,6 @@ export default function LevelOne({
   levelOneTab,
   setLevelTwoTab,
   selectedCity,
-  setCityMenuOpen,
   handleTabChange,
 }) {
   const classes = useStyles();
@@ -41,10 +40,7 @@ export default function LevelOne({
           </button>
           <button
             className={classes.navButton}
-            onClick={() => {
-              setCityMenuOpen(true);
-              setLevelTwoTab(true);
-            }}
+            onClick={() => setLevelTwoTab("regions")}
           >
             {selectedCity.text}
           </button>

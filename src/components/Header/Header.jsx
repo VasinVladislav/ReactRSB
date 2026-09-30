@@ -32,7 +32,7 @@ export default function Header() {
 
   // Слушаем событие автоматического определения региона от ЯндексКарты
   useEffect(
-    () => yandexCityDetected(setSelectedCity, locationMenuData),
+    () => yandexCityDetected(locationMenuData, setSelectedCity),
     [locationMenuData],
   );
 
@@ -46,7 +46,6 @@ export default function Header() {
   const handleTabChange = (tabOne, tabTwo) => {
     setLevelOneTab(tabOne);
     setLevelTwoTab(levelTwoTab === tabTwo ? null : tabTwo);
-    setCityMenuOpen(false);
   };
 
   return (

@@ -1,5 +1,5 @@
 // Функция поиска региона в REGIONS_MENU_DATA по названию области/республики от Яндекса
-export const findRegionByYmapsName = (ymapsRegionName, locationMenuData) => {
+export const findRegionByYmapsName = (locationMenuData, ymapsRegionName) => {
   if (!ymapsRegionName) return null;
   const target = ymapsRegionName.toLowerCase();
 

@@ -2,10 +2,10 @@ import { findRegionByYmapsName } from "./findRegionByYmapsName";
 
 // Слушаем событие поиска города 'user-city-detected'
 
-export const yandexCityDetected = (setSelectedCity, locationMenuData) => {
+export const yandexCityDetected = (locationMenuData, setSelectedCity) => {
   const handleCityDetected = (event) => {
     const ymapsRegionName = event.detail; // Сюда прилетает строка, например "Татарстан"
-    const matchedRegion = findRegionByYmapsName(ymapsRegionName, locationMenuData); // Здесь название региона из нашей базы
+    const matchedRegion = findRegionByYmapsName(locationMenuData, ymapsRegionName); // Здесь название региона из нашей базы
 
     if (matchedRegion) {
       setSelectedCity(matchedRegion);
