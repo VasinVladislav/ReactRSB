@@ -22,6 +22,7 @@ export default function Header() {
 
   useEffect(() => {
     axios.get(`${url}HeaderMenu`).then((res) => {
+      console.log()
       setLevelOneData(res.data);
       setLevelOneTab(res.data[0].name);
     });

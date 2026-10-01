@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://rsbdotnet-vvvladislav94.amvera.io/"
+      "destination": "https://rsbdotnet-vvvladislav94.amvera.io*"
     }
   ]
 }
