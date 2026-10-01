@@ -18,7 +18,7 @@ export default function Header() {
   const [cityMenuOpen, setCityMenuOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
-  const url = "http://localhost:5000/api/";
+  const url = "/api/";
 
   useEffect(() => {
     axios.get(`${url}HeaderMenu`).then((res) => {
