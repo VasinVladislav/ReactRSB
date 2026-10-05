@@ -2,6 +2,7 @@ import { createUseStyles } from "react-jss";
 
 export const useStyles = createUseStyles({
   topHeader: {
+    minHeight: 70,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -49,13 +50,5 @@ export const useStyles = createUseStyles({
     border: "none",
     outline: "2px solid black",
     outlineOffset: "10px" /* Зазор 8px между кнопкой и рамкой */,
-  },
-  line: {
-    position: "absolute",
-    zIndex: 5000,
-    top: 125,
-    left: 0,
-    right: 0,
-    border: "1px solid black",
   },
 });
