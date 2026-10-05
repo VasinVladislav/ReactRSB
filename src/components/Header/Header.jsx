@@ -18,15 +18,13 @@ export default function Header() {
   const [cityMenuOpen, setCityMenuOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
-  const url = "/api/";
-
   useEffect(() => {
-    axios.get(`${url}HeaderMenu`).then((res) => {
+    axios.get(`HeaderMenu`).then((res) => {
       console.log()
       setLevelOneData(res.data);
       setLevelOneTab(res.data[0].name);
     });
-    axios.get(`${url}LocationMenu`).then((res) => {
+    axios.get(`LocationMenu`).then((res) => {
       setLocationMenuData(res.data);
     });
   }, []);
