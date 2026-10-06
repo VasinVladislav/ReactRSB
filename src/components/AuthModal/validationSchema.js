@@ -9,7 +9,7 @@ export const phoneSchema = yup.object().shape({
     .phone("RU", "Введите корректный номер телефона"),
 });
 
-// Схема для Шага 2 (Пароль или СМС-код)
+// Схема для Шага 2 (Пароль)
 export const passwordSchema = yup.object().shape({
   password: yup
     .string()

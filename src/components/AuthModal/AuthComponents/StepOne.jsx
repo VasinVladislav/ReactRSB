@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { formatPhoneNumber } from "./formatPhoneNumber";
+import { useFormContext } from "react-hook-form";
 
-export default function StepOne({
-  classes,
-  handlePhoneSubmit,
-  isLoading,
-  register,
-  errors,
-  clearErrors,
-}) {
+export default function StepOne({ classes, handlePhoneSubmit, isLoading }) {
   // Локальный стейт исключительно для разблокировки кнопки
   const [isReady, setIsReady] = useState(false);
+  const {
+    register,
+    clearErrors,
+    formState: { errors },
+  } = useFormContext();
 
   return (
     <>

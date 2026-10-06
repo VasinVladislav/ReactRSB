@@ -1,12 +1,17 @@
+import { useFormContext } from "react-hook-form";
+
 export default function StepTwo({
   classes,
   handlePasswordSubmit,
   isLoading,
-  register,
-  errors,
   setStep,
-  clearErrors,
 }) {
+  // Берем функции из контекста
+  const {
+    register,
+    clearErrors,
+    formState: { errors },
+  } = useFormContext();
   return (
     <>
       <form onSubmit={handlePasswordSubmit} className={classes.form}>
