@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import LevelOne from "./LevelOneMenu/LevelOneMenu.jsx";
 import LevelTwo from "./LevelTwoMenu/LevelTwoMenu.jsx";
 import LevelThree from "./LevelThreeMenu/LevelThreeMenu.jsx";
-import { yandexCityDetected } from "./HeaderUtils/yandexCityDetected.js";
-import { getSelectedCity } from "./HeaderUtils/getSelectedCity.js";
+import { yandexCityDetected } from "../../services/yandexCityDetected.js";
+import { getSelectedCity } from "../../services/getSelectedCity.js";
 import AuthModal from "../AuthModal/AuthModal.jsx";
 import axios from "axios";
 

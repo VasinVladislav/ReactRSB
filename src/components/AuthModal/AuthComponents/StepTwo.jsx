@@ -21,7 +21,7 @@ export default function StepTwo({
             type="password"
             maxLength={6}
             className={`${classes.input} ${errors.password ? classes.inputError : ""}`}
-            placeholder="••••••••"
+            placeholder="••••••"
             disabled={isLoading}
             {...register("password", {
               onChange: () => {

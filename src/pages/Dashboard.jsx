@@ -1,7 +1,11 @@
+import DashboardBody from "../components/Dashboard/DashboardBody";
+import Header from "../components/Header/Header";
+
 export default function Dashboard() {
   return (
     <>
-      <h1>Hello</h1>
+      <Header/>
+      <DashboardBody/>
     </>
   );
 }

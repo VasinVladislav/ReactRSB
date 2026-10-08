@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { phoneSchema, passwordSchema } from "./validationSchema";
-import { authService } from "../../services/authService";
+import { phoneSchema, passwordSchema } from "../validationSchema";
+import { authService } from "../../../services/authService";
 
 export function useAuthForm(onClose) {
   const navigate = useNavigate();
