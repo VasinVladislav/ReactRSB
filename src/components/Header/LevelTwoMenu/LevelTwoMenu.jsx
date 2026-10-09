@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
-import enter from "../icons/enter.png";
 import search from "../icons/search.png";
 import { useStyles } from "./style";
 import * as Icons from "./icons";
+import LoginButton from "./LoginButton/LoginButton";
 
 export default function LevelTwo({
   levelTwoData,
@@ -32,16 +32,12 @@ export default function LevelTwo({
         </nav>
 
         {/* Поиск и Вход */}
+        
         <div className={classes.actions}>
           <button className={classes.searchBtn}>
             <img src={search} alt="Поиск" />
           </button>
-          <button
-            className={classes.loginBtn}
-            onClick={() => setIsAuthOpen(true)}
-          >
-            <img src={enter} alt="Вход" /> Интернет-банк
-          </button>
+          <LoginButton setIsAuthOpen={setIsAuthOpen}/>
         </div>
       </div>
 

@@ -61,18 +61,6 @@ export const useStyles = createUseStyles({
       display: "none",
     },
   },
-  loginBtn: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: 156,
-    height: 42,
-    gap: 15,
-    background: "none",
-    border: "2px solid black",
-    borderRadius: 10,
-    cursor: "pointer", // Делаем курсор "ручкой" при наведении
-  },
 
   "@keyframes fadeInWithBlur": {
     from: {
