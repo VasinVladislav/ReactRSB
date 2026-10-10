@@ -1,16 +1,38 @@
-import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import Register from "./pages/Register";
+import { siteMenuLoader } from "./services/getMenuData";
+import ProtectedRoute from "./components/ProtectedRoute";
 
-export default function App() {
+function GlobalLoaderFallback() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+    <div style={{ padding: "20px", fontFamily: "sans-serif", textAlign: "center", color: "#666" }}>
+      Загрузка...
     </div>
+  );
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    loader: siteMenuLoader,
+    HydrateFallback: GlobalLoaderFallback,
+  },
+  {
+    element: <ProtectedRoute/>, 
+    children: [
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        loader: siteMenuLoader, // Данные загрузятся, только если юзер прошел ProtectedRoute
+      }
+    ]
+  }
+])
+
+export default function App() { 
+    return (
+    <RouterProvider router={router}/>
   );
 }

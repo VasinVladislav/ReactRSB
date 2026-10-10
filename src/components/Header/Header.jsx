@@ -6,36 +6,23 @@ import LevelThree from "./LevelThreeMenu/LevelThreeMenu.jsx";
 import { yandexCityDetected } from "../../services/yandexCityDetected.js";
 import { getSelectedCity } from "../../services/getSelectedCity.js";
 import AuthModal from "../AuthModal/AuthModal.jsx";
-import axios from "axios";
+import { useLoaderData } from "react-router-dom";
 
 export default function Header() {
   const classes = useStyles();
-  const [levelOneData, setLevelOneData] = useState([]);
-  const [locationMenuData, setLocationMenuData] = useState([]);
-  const [levelOneTab, setLevelOneTab] = useState(null);
+  const { headerMenu, locationMenu } = useLoaderData();
+  const [levelOneTab, setLevelOneTab] = useState(headerMenu[0].name);
   const [levelTwoTab, setLevelTwoTab] = useState(null);
   const [selectedCity, setSelectedCity] = useState(() => getSelectedCity());
   const [cityMenuOpen, setCityMenuOpen] = useState(false);
   const [isAuthOpen, setIsAuthOpen] = useState(false);
 
-  useEffect(() => {
-    axios.get(`HeaderMenu`).then((res) => {
-      console.log()
-      setLevelOneData(res.data);
-      setLevelOneTab(res.data[0].name);
-    });
-    axios.get(`LocationMenu`).then((res) => {
-      setLocationMenuData(res.data);
-    });
-  }, []);
-
   // Слушаем событие автоматического определения региона от ЯндексКарты
   useEffect(
-    () => yandexCityDetected(locationMenuData, setSelectedCity),
-    [locationMenuData],
+    () => yandexCityDetected(locationMenu, setSelectedCity),
+    [locationMenu],
   );
-
-  const levelTwoData = levelOneData?.find(
+  const levelTwoData = headerMenu?.find(
     (tab) => tab.name === levelOneTab,
   )?.items;
   const levelThreeData = levelTwoData?.find(
@@ -52,7 +39,7 @@ export default function Header() {
       <header className={classes.header}>
         {/* Верхняя навигация */}
         <LevelOne
-          levelOneData={levelOneData}
+          headerMenu={headerMenu}
           levelOneTab={levelOneTab}
           selectedCity={selectedCity}
           setLevelTwoTab={setLevelTwoTab}
@@ -73,7 +60,7 @@ export default function Header() {
           levelOneTab={levelOneTab}
           levelTwoTab={levelTwoTab}
           cityMenuOpen={cityMenuOpen}
-          locationMenuData={locationMenuData}
+          locationMenu={locationMenu}
           setSelectedCity={setSelectedCity}
           handleTabChange={handleTabChange}
         />

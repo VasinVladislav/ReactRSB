@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStyles } from "./style";
-import enter from "../../icons/enter.png";
+import enter from "./icons/enter.png";
+import close from "./icons/close.png";
+import settings from "./icons/settings.png";
 
 export default function LoginButton({ setIsAuthOpen }) {
   const classes = useStyles();
@@ -26,20 +28,22 @@ export default function LoginButton({ setIsAuthOpen }) {
   return (
     <>
       {isAuth ? (
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+        <div className={classes.userBtn}>
           {/* Имя пользователя */}
-          <span
-            className={classes.userGreeting}
-            style={{ fontWeight: "600", color: "#1a1a1a" }}
-          >
-            👤 {userName}
-          </span>
-          {/* Кнопка выхода */}
           <button
-            onClick={handleLogout}
-            className={classes.logoutBtn}
+            className={classes.enterBtn}
+            onClick={() => navigate("/dashboard")}
           >
-            Выйти
+            <span className={classes.userGreeting}>{userName}</span>
+          </button>
+          {/* Кнопка настроек */}
+          <button onClick={() => alert("Раздел настроек профиля находится в разработке")} className={classes.settingsBtn}>
+            <img src={settings} alt="Настройки" />
+          </button>
+
+          {/* Кнопка выхода */}
+          <button onClick={handleLogout} className={classes.logoutBtn}>
+            <img src={close} alt="Выйти" />
           </button>
         </div>
       ) : (

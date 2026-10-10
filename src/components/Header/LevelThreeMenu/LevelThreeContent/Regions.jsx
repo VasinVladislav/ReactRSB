@@ -2,7 +2,7 @@ export default function Regions({
   classes,
   levelOneTab,
   handleTabChange,
-  locationMenuData,
+  locationMenu,
   setSelectedCity,
 }) {
   const handleCityClick = (item) => {
@@ -25,7 +25,7 @@ export default function Regions({
   const popularCities = [];
   const alphabetGroups = {};
 
-  locationMenuData.forEach((item) => {
+  locationMenu.forEach((item) => {
     // Выделяем Москву и Питер в отдельный список
     if (
       item.name === "moscow_and_region" ||

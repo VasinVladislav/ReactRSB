@@ -3,7 +3,7 @@ import { useStyles } from "./style";
 import logo from "../../../assets/logo.png";
 
 export default function LevelOne({
-  levelOneData,
+  headerMenu,
   levelOneTab,
   setLevelTwoTab,
   selectedCity,
@@ -19,7 +19,7 @@ export default function LevelOne({
             <img src={logo} alt="Русский Стандарт Банк" />
           </div>
           <nav className={classes.topNav}>
-            {levelOneData?.map((menu) => (
+            {headerMenu?.map((menu) => (
               <button
                 key={menu.id}
                 className={`${classes.navButton} ${levelOneTab === menu.name ? classes.active : ""}`}

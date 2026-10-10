@@ -7,7 +7,7 @@ export default function LevelThree({
   levelThreeData,
   levelOneTab,
   levelTwoTab,
-  locationMenuData,
+  locationMenu,
   setSelectedCity,
   handleTabChange,
 }) {
@@ -25,7 +25,7 @@ export default function LevelThree({
               classes={classes}
               levelOneTab={levelOneTab}
               handleTabChange={handleTabChange}
-              locationMenuData={locationMenuData}
+              locationMenu={locationMenu}
               setSelectedCity={setSelectedCity}
             />
           ) : (
