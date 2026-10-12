@@ -5,6 +5,7 @@ export const useStyles = createUseStyles({
     backgroundColor: "white",
     position: "relative",
     zIndex: 1000,
+    padding: "0 0 15px",
     "& *": {
       fontFamily: '"Manrope", sans-serif',
       fontSize: 14,

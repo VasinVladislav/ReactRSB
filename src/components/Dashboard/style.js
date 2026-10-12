@@ -17,6 +17,7 @@ export const useStyles = createUseStyles({
     maxWidth: 1680,
     padding: "0px 50px",
     display: "flex",
+    gap: 50,
   },
   cardsBlock: {
     display: "flex",
@@ -27,6 +28,5 @@ export const useStyles = createUseStyles({
     width: 500,
     height: "100%",
     padding: "0 50px 50px 50px",
-    gap: 50,
   },
 });

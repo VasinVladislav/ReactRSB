@@ -30,6 +30,7 @@ export function useAuthForm(onClose) {
 
       if (data.action === "request_password") setStep(2);
       else if (data.action === "register_profile") {
+        localStorage.setItem("pendingPhone", phoneValue);
         alert(data.message);
         onClose();
         navigate("/register");

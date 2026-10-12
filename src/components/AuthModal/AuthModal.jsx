@@ -7,8 +7,6 @@ import { useAuthForm } from "./AuthComponents/useAuthForm";
 export default function AuthModal({ isOpen, onClose }) {
   const classes = useStyles();
 
-  // Инициализация React Hook Form под именем methods
-
     const {
     step,
     setStep,

@@ -20,11 +20,9 @@ export const useStyles = createUseStyles({
   logoImg: {
     position: "relative",
     left: -20,
-  },
-  "&:not(:nth-last-child(-n+2))": {
-    "@media (max-width: 1399px)": {
-      display: "none",
-    },
+    background: "none",
+    border: "none",
+    cursor: "pointer", // Делаем курсор "ручкой" при наведении
   },
   topNav: {
     display: "flex",

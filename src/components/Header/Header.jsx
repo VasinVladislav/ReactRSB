@@ -11,7 +11,7 @@ import { useLoaderData } from "react-router-dom";
 export default function Header() {
   const classes = useStyles();
   const { headerMenu, locationMenu } = useLoaderData();
-  const [levelOneTab, setLevelOneTab] = useState(headerMenu[0].name);
+  const [levelOneTab, setLevelOneTab] = useState(headerMenu[0]?.name);
   const [levelTwoTab, setLevelTwoTab] = useState(null);
   const [selectedCity, setSelectedCity] = useState(() => getSelectedCity());
   const [cityMenuOpen, setCityMenuOpen] = useState(false);

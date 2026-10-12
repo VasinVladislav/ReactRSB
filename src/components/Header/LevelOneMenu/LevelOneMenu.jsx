@@ -1,6 +1,7 @@
 import { scrollToId } from "./scroll";
 import { useStyles } from "./style";
 import logo from "../../../assets/logo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function LevelOne({
   headerMenu,
@@ -10,14 +11,15 @@ export default function LevelOne({
   handleTabChange,
 }) {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   return (
     <>
       <div className={classes.topHeader}>
         <div className={classes.topLeft}>
-          <div className={classes.logoImg}>
+          <button className={classes.logoImg} onClick={()=>navigate("/")}>
             <img src={logo} alt="Русский Стандарт Банк" />
-          </div>
+          </button>
           <nav className={classes.topNav}>
             {headerMenu?.map((menu) => (
               <button
