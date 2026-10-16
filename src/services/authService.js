@@ -17,5 +17,23 @@ export const authService = {
   registerProfile: async (phone, password, firstName) => {
     const response = await axios.post("user/register-profile", { phone, password, firstName });
     return response.data;
+  },
+  // Получить данные профиля (Безлично! Токен прикрепится автоматически перехватчиком)
+  getProfile: async () => {
+    const response = await axios.get("user/profile-info");
+    return response.data; // Возвращает { lastName, firstName, middleName, email, birthDate }
+  },
+
+  // Сменить пароль (Тоже безлично)
+  changePassword: async (oldPassword, newPassword) => {
+    const response = await axios.post("user/change-password", { oldPassword, newPassword });
+    return response.data;
+  },
+
+    // Сменить электронную почту
+  changeEmail: async (newEmail) => {
+    const response = await axios.post("user/change-email", { newEmail });
+    return response.data;
   }
+
 };

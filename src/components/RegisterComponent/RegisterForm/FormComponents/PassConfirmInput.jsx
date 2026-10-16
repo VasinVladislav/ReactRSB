@@ -24,7 +24,7 @@ export default function PassConfirmInput({ register, isLoading, errors }) {
             })}
           />
         </label>
-        <span className={classes.regMsg}>Повторите пароль</span>
+        <span className={classes.regMsg}>Повторите пароль</span> 
       </div>
     </>
   );

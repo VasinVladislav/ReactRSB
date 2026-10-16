@@ -20,6 +20,8 @@ export const useStyles = createUseStyles({
     display: "flex",
     flexDirection: "column",
     padding: 20,
+    backgroundColor: "#fff",
+    boxShadow: "0 8px 24px 0 rgba(0, 0, 0, .05)",
   },
   productImg: {
     width: 50,

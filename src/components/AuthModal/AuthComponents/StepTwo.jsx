@@ -19,7 +19,6 @@ export default function StepTwo({
           <label className={classes.label}>Пароль от интернет-банка</label>
           <input
             type="password"
-            maxLength={6}
             className={`${classes.input} ${errors.password ? classes.inputError : ""}`}
             placeholder="••••••"
             disabled={isLoading}
@@ -48,7 +47,7 @@ export default function StepTwo({
           onClick={() => setStep(1)}
           disabled={isLoading}
         >
-          ← Изменить номер телефона
+          Изменить номер телефона
         </button>
       </form>
     </>

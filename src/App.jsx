@@ -4,6 +4,8 @@ import Dashboard from "./pages/Dashboard";
 import { siteMenuLoader } from "./services/getMenuData";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Register from "./pages/Register";
+import RegistrationGuard from "./components/RegistrationGuard";
+import Settings from "./pages/Settings";
 
 function GlobalLoaderFallback() {
   return (
@@ -28,10 +30,15 @@ const router = createBrowserRouter([
     HydrateFallback: GlobalLoaderFallback,
   },
   {
-    path: "/register",
-    element: <Register />,
-    loader: siteMenuLoader,
-    HydrateFallback: GlobalLoaderFallback,
+    element: <RegistrationGuard />,
+    children: [
+      {
+        path: "/register",
+        element: <Register />,
+        loader: siteMenuLoader,
+        HydrateFallback: GlobalLoaderFallback,
+      },
+    ],
   },
   {
     element: <ProtectedRoute />,
@@ -40,8 +47,15 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />,
         loader: siteMenuLoader, // Данные загрузятся, только если юзер прошел ProtectedRoute
+        HydrateFallback: GlobalLoaderFallback,
       },
     ],
+  },
+  {
+    path: "/settings",
+    element: <Settings />,
+    loader: siteMenuLoader,
+    HydrateFallback: GlobalLoaderFallback,
   },
 ]);
 

@@ -16,7 +16,8 @@ export const useStyles = createUseStyles({
     height: 30,
     border: "none",
     borderRadius: 30,
-    backgroundColor: "#B4BD7F",
+   backgroundColor: "#deb3ff", 
+
     cursor: "pointer",
   },
 
@@ -27,7 +28,8 @@ export const useStyles = createUseStyles({
     border: "1px solid black",
     borderRadius: 20,
     height: 100,
-    margin: "0px 0px 20px"
+    margin: "0px 0px 20px",
+    backgroundColor: "#B4BD7F",
   },
   cardImg: {
     margin: 15,

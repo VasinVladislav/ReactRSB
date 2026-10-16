@@ -95,7 +95,7 @@ export const useStyles = createUseStyles({
   submitBtn: {
     width: "100%",
     padding: "14px",
-    backgroundColor: "#0052cc", // Фирменный синий (или замените на ваш цвет)
+    backgroundColor: "#c384ff",
     color: "#fff",
     border: "none",
     borderRadius: "8px",
@@ -107,7 +107,7 @@ export const useStyles = createUseStyles({
     justifyContent: "center",
     alignItems: "center",
     height: "48px",
-    "&:hover": { backgroundColor: "#0043a4" },
+    "&:hover": { backgroundColor: "#b15eff" },
     "&:disabled": { opacity: 0.6, cursor: "not-allowed" },
   },
   spinner: {
@@ -129,5 +129,23 @@ export const useStyles = createUseStyles({
   },
   "@keyframes spin": {
     to: { transform: "rotate(360deg)" },
+  },
+  backBtn: {
+    width: "100%",
+    padding: "14px",
+    backgroundColor: "#c9c9c9",
+    color: "#070707",
+    border: "none",
+    borderRadius: "8px",
+    fontSize: "16px",
+    fontWeight: 600,
+    cursor: "pointer",
+    transition: "background-color 0.2s, opacity 0.2s",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "48px",
+    "&:hover": { backgroundColor: "#757575" },
+    "&:disabled": { opacity: 0.6, cursor: "not-allowed" },
   },
 });

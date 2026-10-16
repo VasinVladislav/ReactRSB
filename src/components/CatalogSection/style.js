@@ -113,6 +113,8 @@ export const useStyles = createUseStyles({
     border: "1px solid black",
     borderRadius: 20,
     cursor: "pointer",
+    backgroundColor: "#f3f3f5",
+    boxShadow: "0 8px 24px 0 rgba(0, 0, 0, .05)",
   },
   cardHref: {
     width: "100%",

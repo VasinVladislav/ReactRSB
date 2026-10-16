@@ -37,7 +37,7 @@ export default function LoginButton({ setIsAuthOpen }) {
             <span className={classes.userGreeting}>{userName}</span>
           </button>
           {/* Кнопка настроек */}
-          <button onClick={() => alert("Раздел настроек профиля находится в разработке")} className={classes.settingsBtn}>
+          <button onClick={() => navigate("/settings")} className={classes.settingsBtn}>
             <img src={settings} alt="Настройки" />
           </button>
 

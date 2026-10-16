@@ -10,7 +10,8 @@ export const useStyles = createUseStyles({
     margin: "0 auto",
     padding: "170px 50px 50px",
     width: "100%",
-    height: "100vh",
+    height: "100vh", 
+    backgroundColor: "#f7f9f9"
   },
   mainContainer: {
     width: "100%",
@@ -28,5 +29,7 @@ export const useStyles = createUseStyles({
     width: 500,
     height: "100%",
     padding: "0 50px 50px 50px",
+    backgroundColor: "#fff",
+    boxShadow: "0 8px 24px 0 rgba(0, 0, 0, .05)",
   },
 });

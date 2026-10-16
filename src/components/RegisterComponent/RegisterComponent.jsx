@@ -45,7 +45,6 @@ export default function RegisterComponent() {
         email: data.email,
         birthDate: data.birthDate,
       });
-      console.log(response);
       setIsLoading(false);
 
       // Сохраняем выданные данные сессии
