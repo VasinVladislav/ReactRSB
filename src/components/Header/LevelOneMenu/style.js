@@ -39,6 +39,7 @@ export const useStyles = createUseStyles({
     display: "flex", // Если внутри есть иконка и текст
     alignItems: "center",
     gap: "8px", // Отступ между иконкой и текстом
+    textDecoration: "none",
 
     "&:hover": {
       color: "#828282", // Цвет при наведении (например, красный)

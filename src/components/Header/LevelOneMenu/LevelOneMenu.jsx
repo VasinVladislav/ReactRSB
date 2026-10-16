@@ -1,7 +1,7 @@
-import { scrollToId } from "./scroll";
 import { useStyles } from "./style";
 import logo from "../../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function LevelOne({
   headerMenu,
@@ -17,7 +17,7 @@ export default function LevelOne({
     <>
       <div className={classes.topHeader}>
         <div className={classes.topLeft}>
-          <button className={classes.logoImg} onClick={()=>navigate("/")}>
+          <button className={classes.logoImg} onClick={() => navigate("/")}>
             <img src={logo} alt="Русский Стандарт Банк" />
           </button>
           <nav className={classes.topNav}>
@@ -34,12 +34,13 @@ export default function LevelOne({
         </div>
         <div className={classes.topNav}>
           <button className={classes.navButton}>О банке</button>
-          <button
+          <HashLink
+            smooth
+            to="/#map" // Ведет строго к карте на главной странице
             className={classes.navButton}
-            onClick={() => scrollToId("map")}
           >
             Офисы и банкоматы
-          </button>
+          </HashLink>
           <button
             className={classes.navButton}
             onClick={() => setLevelTwoTab("regions")}
