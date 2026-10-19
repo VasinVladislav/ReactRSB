@@ -2,6 +2,7 @@ import { useStyles } from "./style";
 import logo from "../../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import LoginButton from "../LevelTwoMenu/LoginButton/LoginButton";
 
 export default function LevelOne({
   headerMenu,
@@ -9,6 +10,7 @@ export default function LevelOne({
   setLevelTwoTab,
   selectedCity,
   handleTabChange,
+  setIsAuthOpen
 }) {
   const classes = useStyles();
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ export default function LevelOne({
             ))}
           </nav>
         </div>
-        <div className={classes.topNav}>
+        <div className={classes.topRight}>
           <button className={classes.navButton}>О банке</button>
           <HashLink
             smooth
@@ -47,8 +49,12 @@ export default function LevelOne({
           >
             {selectedCity.text}
           </button>
-          <button className={classes.navButton}>RU</button>
+          {/* <button className={classes.navButton}>RU</button> */}
         </div>
+        <div className={classes.loginSection}>
+          <LoginButton setIsAuthOpen={setIsAuthOpen}/>
+        </div>
+        
       </div>
     </>
   );

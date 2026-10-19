@@ -6,9 +6,25 @@ import wb from "./assets/wb.png";
 import zolotoe from "./assets/zolotoe-yabloko.png";
 import Up from "./assets/Thumbs Up.png";
 import Enter from "./assets/Enter.png";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import AuthModal from "../AuthModal/AuthModal";
 
 export default function PromoBlock() {
   const classes = useStyles();
+  const navigate = useNavigate();
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+
+  const handleAuth = () => {
+    const isAuthenticated = Boolean(
+      localStorage.getItem("token") && localStorage.getItem("userName"),
+    );
+    if (isAuthenticated) {
+      navigate("/dashboard"); // Авторизован -> летит в личный кабинет
+    } else {
+      setIsAuthOpen(true); // Гость -> открываем модалку входа
+    }
+  };
 
   return (
     <>
@@ -59,7 +75,7 @@ export default function PromoBlock() {
                 <img src={Up} alt="" />
               </p>
             </div>
-            <button className={classes.loginBtn}>
+            <button className={classes.loginBtn} onClick={() => handleAuth()}>
               <div className={classes.loginBtnInside}>
                 <span>В личный кабинет</span>
                 <img src={Enter} alt="" />
@@ -68,6 +84,11 @@ export default function PromoBlock() {
           </div>
         </div>
       </section>
+      <AuthModal
+        key={isAuthOpen}
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+      />
     </>
   );
 }

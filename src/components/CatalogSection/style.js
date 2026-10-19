@@ -14,8 +14,11 @@ export const useStyles = createUseStyles({
   },
   mainTitle: {
     fontSize: 54,
+    width: "100%",
     "@media (max-width: 1580px)": {
+      fontSize: 44,
       margin: "0 auto",
+      textAlign: "center",
     },
   },
   tabs: {
@@ -23,10 +26,11 @@ export const useStyles = createUseStyles({
     alignItems: "center",
     gap: 80,
     margin: "50px 0",
+    whiteSpace: "nowrap",
     "@media (max-width: 1580px)": {
       margin: "50px auto",
       justifyContent: "space-between",
-      gap: 30,
+      gap: 20,
     },
   },
   tab: {
@@ -39,6 +43,9 @@ export const useStyles = createUseStyles({
     cursor: "pointer",
     padding: "10px 20px",
     transition: "background-color 0.5s ease",
+    "@media (max-width: 1580px)": {
+      fontSize: 18,
+    },
   },
   active: {
     backgroundColor: "rgba(225, 203, 254, 0.3)", // Черный фон для активной вкладки

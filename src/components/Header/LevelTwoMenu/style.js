@@ -5,7 +5,7 @@ export const useStyles = createUseStyles({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    // width: "100vw",
+    height: 50,
     maxWidth: 1680,
     margin: "0 auto",
     padding: "0 50px",
@@ -46,6 +46,10 @@ export const useStyles = createUseStyles({
     justifyContent: "space-between",
     alignItems: "center",
     gap: 30,
+
+    "@media (max-width: 1399px)": {
+      display: "none",
+    },
   },
   searchBtn: {
     display: "flex",

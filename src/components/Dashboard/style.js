@@ -10,8 +10,8 @@ export const useStyles = createUseStyles({
     margin: "0 auto",
     padding: "170px 50px 50px",
     width: "100%",
-    height: "100vh", 
-    backgroundColor: "#f7f9f9"
+    height: "100vh",
+    backgroundColor: "#f7f9f9",
   },
   mainContainer: {
     width: "100%",
@@ -19,6 +19,7 @@ export const useStyles = createUseStyles({
     padding: "0px 50px",
     display: "flex",
     gap: 50,
+    justifyContent: "space-between",
   },
   cardsBlock: {
     display: "flex",

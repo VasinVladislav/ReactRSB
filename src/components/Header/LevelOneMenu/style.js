@@ -28,6 +28,13 @@ export const useStyles = createUseStyles({
     display: "flex",
     gap: 20,
   },
+  topRight: {
+    display: "flex",
+    gap: 20,
+    "@media (max-width: 1399px)": {
+      display: "none",
+    },
+  },
   navButton: {
     background: "none", // Убираем фон
     border: "none", // Убираем рамку
@@ -49,5 +56,11 @@ export const useStyles = createUseStyles({
     border: "none",
     outline: "2px solid black",
     outlineOffset: "10px" /* Зазор 8px между кнопкой и рамкой */,
+  },
+  loginSection: {
+    display: "none",
+    "@media (max-width: 1399px)": {
+      display: "block",
+    },
   },
 });

@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import search from "../icons/search.png";
+// import search from "../icons/search.png";
 import { useStyles } from "./style";
 import * as Icons from "./icons";
 import LoginButton from "./LoginButton/LoginButton";
@@ -34,9 +34,9 @@ export default function LevelTwo({
         {/* Поиск и Вход */}
         
         <div className={classes.actions}>
-          <button className={classes.searchBtn}>
+          {/* <button className={classes.searchBtn}>
             <img src={search} alt="Поиск" />
-          </button>
+          </button> */}
           <LoginButton setIsAuthOpen={setIsAuthOpen}/>
         </div>
       </div>

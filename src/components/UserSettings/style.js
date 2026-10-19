@@ -25,12 +25,18 @@ export const useStyles = createUseStyles({
     backgroundColor: "#fff",
     boxShadow: "0 8px 24px 0 rgba(0, 0, 0, .05)",
     borderRadius: 30,
+    "@media (max-width: 1399px)": {
+      width: "100%",
+      height: "100%",
+      padding: "150px 0",
+    },
   },
   userInfo: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-evenly",
     width: "30%",
+    minWidth: 290,
     height: "70%",
     background: "#fff",
     padding: "20px",

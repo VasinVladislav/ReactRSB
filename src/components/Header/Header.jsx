@@ -45,6 +45,7 @@ export default function Header() {
           setLevelTwoTab={setLevelTwoTab}
           setCityMenuOpen={setCityMenuOpen}
           handleTabChange={handleTabChange}
+          setIsAuthOpen={setIsAuthOpen}
         />
         {/* Основная навигация */}
         <hr className={classes.line} />
