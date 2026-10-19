@@ -1,7 +1,7 @@
 import { useStyles } from "./style";
 import detailsTransfer from "../assets/detailsTransfer.png";
-import Invoices from "../assets/Invoices.png";
-import phone from "../assets/phone.png";
+import invoices from "../assets/invoices.png";
+import phonePay from "../assets/phonePay.png";
 import phoneTransfer from "../assets/phoneTransfer.png";
 
 export default function BankProduct() {
@@ -11,7 +11,7 @@ export default function BankProduct() {
       <div className={classes.bankProduct}>
         <div className={classes.bankProductContainer}>
           <div className={classes.bankProductItem}>
-            <img className={classes.productImg} src={Invoices} alt="" />
+            <img className={classes.productImg} src={invoices} alt="" />
             Счета на оплату
           </div>
           <div className={classes.bankProductItem}>
@@ -23,7 +23,7 @@ export default function BankProduct() {
             Перевести по реквизитам
           </div>
           <div className={classes.bankProductItem}>
-            <img className={classes.productImg} src={phone} alt="" /> Оплатить
+            <img className={classes.productImg} src={phonePay} alt="" /> Оплатить
             мобильный
           </div>
         </div>

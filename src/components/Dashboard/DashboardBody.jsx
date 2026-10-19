@@ -16,7 +16,7 @@ export default function DashboardBody() {
             <Deposit />
             <Credits />
           </div>
-          <BankProduct/>
+          <BankProduct />
         </div>
       </div>
     </>
